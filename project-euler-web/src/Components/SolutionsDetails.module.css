@@ -1,0 +1,52 @@
+.title{
+    font-size:2em;
+    font-weight: 700;
+    margin: .5em auto;
+}
+
+.details{
+    text-align: start;
+    margin-left: 1em;
+}
+
+.details .row
+{
+    display: flex;
+}
+
+.details .row .row-label
+{
+    flex:2;
+}
+
+
+.details .row .row-value
+{
+    flex:5;
+}
+
+.problem-title {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.solution
+{
+    margin-top:1em;
+}
+
+.solution-header
+{
+    text-transform: capitalize;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.solution-source-code
+{
+    margin:0.5em 0;
+}
+
+.solution-summary{
+    color:rgb(76, 45, 200);
+}

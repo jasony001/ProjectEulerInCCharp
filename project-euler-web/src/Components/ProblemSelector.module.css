@@ -1,0 +1,39 @@
+.solutions
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2em;
+    width:100%;
+    margin-left:5em;
+}
+
+.form{
+    position: relative;
+}
+
+.problem-id-list {
+   position:absolute;
+   top: 2em;
+   text-align: left;
+   left:43.5vw;
+   border: 1px;
+   border-style: solid;
+   border-color: rgb(116, 155, 37);
+   width: 12em;
+   padding:0.2em;
+   background-color: white;
+}
+
+.available-problem-id:nth-child(2n)
+{
+    background-color: rgb(213, 210, 210);
+}
+
+.available-problem-id:hover
+{
+    background-color: aquamarine;
+}
+
+.container {
+    height: 98vh;
+}
