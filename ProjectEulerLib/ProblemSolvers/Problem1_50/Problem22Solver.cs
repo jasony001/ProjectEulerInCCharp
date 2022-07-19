@@ -22,13 +22,18 @@ namespace ProjectEulerLib
             Problem.Id = 22;
             Problem.UpperBound = 20;
             Problem.IsClosedOnRight = true;
-            Problem.Title = "";
-            Problem.Description = "";
+            Problem.Title = "Names scores";
+            Problem.Description = 
+@"Using names.txt (ProjectEulerWebAPI/p022_names.txt), a 46K text file containing over five-thousand first names, begin by sorting it into alphabetical order. Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list to obtain a name score.
+
+For example, when the list is sorted into alphabetical order, COLIN, which is worth 3 + 15 + 12 + 9 + 14 = 53, is the 938th name in the list. So, COLIN would obtain a score of 938 × 53 = 49714.
+
+What is the total of all the name scores in the file?";
 
             Problem.Solutions.Add(new Solution
             {
                 ProblemId = 22,
-                Description = "Binary tree. Remember to remove the quote in name string.",
+                Description = "Binary tree, traverse recursively. Remember to remove the quote in name string.",
                 Version = 1,
                 SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[0])
             });

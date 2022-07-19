@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System;
 using System.Collections.Generic;
-using ProjectEulerLib;
+using ProjectEulerLib.MoreMath;
 
 namespace testConsoleApp
 {
@@ -9,21 +9,19 @@ namespace testConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter");
+            Console.Write("Enter a number: ");
+            long n = Convert.ToInt64(Console.ReadLine());
 
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
-            
-            System.IO.StreamReader sr = new System.IO.StreamReader("p022_names.txt");
-            string s = sr.ReadToEnd();
-            sr.Close();
-            string [] names = s.Split(new char[]{','}, StringSplitOptions.RemoveEmptyEntries);
-            int longest = 0;
-            foreach(string name in names) longest = Math.Max(name.Length, longest);
-            Console.WriteLine($"{names.Length + 1} names. Longest name has {longest} characters");
+
+            FactorCalculator worker = new FactorCalculator();
+            List<long> factors = worker.GetFactors(n);
 
             stopWatch.Stop();
 
+            foreach(long f in factors) Console.Write($"{f} ");
+            Console.WriteLine();
             Console.WriteLine(((int)(stopWatch.ElapsedMilliseconds)).ToString() + " milliseconds");
         }
     }

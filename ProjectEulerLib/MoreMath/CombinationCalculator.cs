@@ -51,5 +51,13 @@ namespace ProjectEulerLib.MoreMath
 
             return allCombinations;
         }
+    
+        public long NumberOfPermutaions (long n)
+        {
+            long result = 1;
+            while(n > 1) { result *= n; n--; }
+
+            return result;
+        }
     }
 }

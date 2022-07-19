@@ -94,9 +94,8 @@ namespace ProjectEulerLib
             while (numberOfFactors <= Problem.CalculatedIncludedUpperBound && x < 1000000)
             {
                 n = x * (x + 1) / 2;
-                numberOfFactors = worker.GetNumberOfFactors(n);
+                numberOfFactors = worker.GetFactors(n).Count;
 
-                Console.WriteLine($"x={x} n={n}: {numberOfFactors} factors");
                 x ++;
             }
 

@@ -47,106 +47,16 @@ Evaluate the sum of all the amicable numbers under 10000.";
             // });
         }
 
-        long[] PrimesUnder100 = new MoreMath.PrimeCalculator().SeiveOfEratosthenes(100);
-        Dictionary<long, int> GetPrimeFactorsDict(long n)
-        {
-            long o = n;
-            Dictionary<long, int> primeFactorsDict = new Dictionary<long, int>();
-            foreach (long p in PrimesUnder100)
-            {
-                int pow = 0;
-                while (n % p == 0)
-                {
-                    pow++;
-                    n /= p;
-                }
-                if (pow > 0) primeFactorsDict.Add(p, pow);
-            }
-
-            if (n < o && n > 1) primeFactorsDict.Add(n, 1);
-
-            return primeFactorsDict;
-        }
-
-        public List<long> GetFactors(long n)
-        {
-            Dictionary<long, int> primeFactorsDict = GetPrimeFactorsDict(n);
-            MoreMath.CombinationCalculator worker = new MoreMath.CombinationCalculator();
-
-            List<long> factors = new List<long> { 1 };
-            for (int i = 1; i <= primeFactorsDict.Count; i++)
-            {
-                List<List<long>> primeKeyCombinations = worker.ListCombinations<long>(primeFactorsDict.Keys.ToList(), i);
-                foreach (List<long> combination in primeKeyCombinations)
-                {
-                    List<List<long>> factorsBaseListList = new List<List<long>>();
-                    foreach (long p in combination)
-                    {
-                        List<long> factorsBaseList = new List<long>();
-                        int pow = primeFactorsDict[p];
-                        for (int m = 1; m <= pow; m++)
-                        {
-                            factorsBaseList.Add((long)Math.Pow(p, m));
-                        }
-                        factorsBaseListList.Add(factorsBaseList);
-                    }
-
-                    factors.AddRange(GetCombinedFactors(factorsBaseListList));
-                }
-            }
-
-            factors.Sort();
-            return factors;
-        }
 
         long GetSumOfFactors(long n)
         {
             if (n <= 1) return 0;
             long sum = 0;
-            List<long> factors = GetFactors(n);
+            List<long> factors = new MoreMath.FactorCalculator().GetFactors(n);
             factors.Remove(n);
             foreach (long f in factors) sum += f;
 
             return sum;
-        }
-
-        private List<long> GetCombinedFactors(List<List<long>> factorsBaseListList)
-        {
-
-            List<long> limits = new List<long>();
-            List<int> indecies = new List<int>();
-            foreach (List<long> factorBaseList in factorsBaseListList)
-            {
-                limits.Add(factorBaseList.Count);
-                indecies.Add(0);
-            }
-
-            List<long> combinedFactors = new List<long>();
-            while (indecies[0] < limits[0])
-            {
-                long factor = 1;
-                for (int i = 0; i < factorsBaseListList.Count; i++)
-                {
-                    List<long> factorBaseList = factorsBaseListList[i];
-                    factor *= factorBaseList[indecies[i]];
-                }
-                combinedFactors.Add(factor);
-
-                // increase index by 1, carry 1 when exceeds limit
-                int position = factorsBaseListList.Count - 1;
-                indecies[position]++;
-                while (limits[position] == indecies[position] && position > 0)
-                {
-                    if (position > 0)
-                    {
-                        indecies[position] = 0;
-                        indecies[position - 1] = indecies[position - 1] + 1;
-                        position--;
-                    }
-                }
-            }
-
-            return combinedFactors;
         }
 
         public override string solution1()
