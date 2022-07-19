@@ -5,7 +5,7 @@ using ProjectEulerDataContracts;
 
 namespace ProjectEulerLib
 {
-    public class ProblemxxSolver : ProblemSolver
+    public class Problem28Solver : ProblemSolver
     {
 
         List<List<string>> sourceCodeLinesList = new List<List<string>>{
@@ -20,18 +20,18 @@ namespace ProjectEulerLib
             }
         };
 
-        public ProblemxxSolver() : base()
+        public Problem28Solver() : base()
         {
-            Problem.Id = 99999;
+            Problem.Id = 28;
             Problem.UpperBound = 20;
             Problem.IsClosedOnRight = true;
-            Problem.Title = "";
+            Problem.Title = "Number spiral diagonals";
             Problem.Description = "";
 
             Problem.Solutions.Add(new Solution
             {
-                ProblemId = 99999,
-                Description = "",
+                ProblemId = 28,
+                Description = "When the size is s, the 4 corners are s^2, s^2 - (s - 1), s^2 - 2(s - 1), s^2 - 3(s - 1)",
                 Version = 1,
                 SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[0])
             });
@@ -53,7 +53,15 @@ namespace ProjectEulerLib
 
         public override string solution1()
         {
-            return "";
+            long sum = 1;
+            int l = 3;
+            while(l <= 1001)
+            {
+                sum += 4 * l * l - 6 * l + 6;
+                l +=2;
+            }
+
+            return sum.ToString();
         }
 
         public override string solution2()
