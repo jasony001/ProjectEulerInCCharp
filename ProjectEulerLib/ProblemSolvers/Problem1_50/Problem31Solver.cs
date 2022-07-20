@@ -10,7 +10,25 @@ namespace ProjectEulerLib
 
         List<List<string>> sourceCodeLinesList = new List<List<string>>{
             new List<string> {
-
+"public override string solution1()",
+"        {",
+"            if (Problem.CalculatedIncludedUpperBound < 0) return \"0\";",
+"            return CountArrangement(Problem.CalculatedIncludedUpperBound, new int[]{200, 100, 50, 20, 10, 5, 2, 1}).ToString();",
+"        }",
+"",
+"        public int CountArrangement(long total, int[] cTypes)",
+"        {",
+"            if (total == 0) return 1;",
+"            if (cTypes == null || cTypes.Length == 0) return 0;",
+"            if (cTypes.Length == 1) return 1;",
+"            if (cTypes.Length == 2) return (int)(total / cTypes[0] + 1);",
+"",
+"            int count = 0;",
+"            for(int i = 0; i <= total / cTypes[0]; i ++) count += CountArrangement(total - i * cTypes[0], cTypes.Where(c => c != cTypes[0]).ToArray());",
+"",
+"            return count;",
+"        }",
+"",
             },
             new List<string>{
 
@@ -37,7 +55,10 @@ How many different ways can £2 be made using any number of coins?";
             Problem.Solutions.Add(new Solution
             {
                 ProblemId = 31,
-                Description = "",
+                Description = 
+@"Recursive. 
+You could translate recursive to loops (the 'count down' solution), but then you have to change the code when the upperBound changes (total of 200 P).
+Fot this problem, the recursive is 6 levels deep at the most.",
                 Version = 1,
                 SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[0])
             });
@@ -50,130 +71,25 @@ How many different ways can £2 be made using any number of coins?";
             // });
         }
 
-        long GetWays(int sum, List<int> coinValues)
-        {
-            if (sum <= 0) return 0;
-            if (sum == 1) return 1;
-            if (coinValues.Count == 1) return 1;
-
-            long ways = 0;
-
-            int maxCoinValue = coinValues.Where( c => c <= sum).Max();
-            while (sum >= maxCoinValue)
-            {
-                long waysWith1MaxCoin = GetWays(sum - maxCoinValue, coinValues.Where(c => c < maxCoinValue).ToList());
-                long waysWithoutMaxCoin = GetWays(sum, coinValues.Where(c => c < maxCoinValue).ToList());
-                ways += waysWith1MaxCoin + waysWithoutMaxCoin;
-                sum -= maxCoinValue;
-            }
-
-            return ways;
-        }
-
-        // public override string solution1()
-        // {
-        //     MoreMath.CombinationCalculator worker = new MoreMath.CombinationCalculator();
-        //     List<int> coinTypes = new List<int>{200, 100, 50, 20, 10, 5, 2, 1};
-        //     int answer = 0;
-
-        //     for(int i = 1; i <= 8; i ++)
-        //     {
-        //         foreach(List<int> combination in worker.ListCombinations(coinTypes, i))
-        //         {
-        //             if (i == 1) { answer ++; continue;}
-        //             if (i == 2 ) { if (combination[0] < 200) answer += (200 - combination[0]) / combination[0]; continue;}
-
-        //             int [] numberOfCoin = new int[combination.Count];
-        //             foreach(int n in numberOfCoin) numberOfCoin[n] = 1;
-
-        //             Dictionary<int, int> coinDict = new Dictionary<int, int>();
-        //             for(int ci = 0; ci < combination.Count - 2; ci ++)
-        //             {
-        //                 coinDict.Add(combination[ci], 1);
-        //             }
-
-        //             int max0 = 200 / coinDict.Keys.ToArray()[0];
-        //             while(coinDict[coinDict.Keys.ToArray()[0]] < max0)
-        //             {
-        //                 int sum = 0;
-        //                 for(int c = 0; c < coinDict.Keys.Count; c ++)
-        //                 {
-        //                     sum += coinDict[coinDict.Keys.ToArray()[c]] * coinDict.Keys.ToArray()[c];
-        //                 }
-        //                 // if (sum < 200)
-        //                 // {
-        //                     int r = (200 - sum) % combination[combination.Count - 2];
-        //                     answer += (200 - sum) / combination[combination.Count - 2] - (r == 0 ? 1 : 0);
-        //                 // }
-
-        //                 coinDict = IncreaseOdometer(coinDict, 200);
-        //             }
-        //         }
-        //     }
-
-        //     return answer.ToString();
-        // }
-
-        // Dictionary<int, int> IncreaseOdometer(Dictionary<int, int> coinDict, int limit)
-        // {
-        //     int position = coinDict.Keys.Count() - 1;
-        //     coinDict[coinDict.Keys.ToArray()[position]] ++;
-        //     while (coinDict.Values.Sum(v => v) >= limit && position > 0)
-        //     {
-        //         coinDict[coinDict.Keys.ToArray()[position]] = 1;
-        //         coinDict[coinDict.Keys.ToArray()[position - 1]] ++;
-        //     }
-
-
-        //     return coinDict;
-        // }
-
         public override string solution1()
         {
-            return ac(200, new int[]{200, 100, 50, 20}).ToString();
+            if (Problem.CalculatedIncludedUpperBound < 0) return "0";
+            return CountArrangement(Problem.CalculatedIncludedUpperBound, new int[]{200, 100, 50, 20, 10, 5, 2, 1}).ToString();
         }
 
-        public int ac(int total, int[] cTypes)
+        public int CountArrangement(long total, int[] cTypes)
         {
-            if (total == 0) 
-            {
-                Console.WriteLine($"ac({total}, {arrToStr(cTypes)} = 1");
-                return 1;
-            }
+            if (total == 0) return 1;
+            if (cTypes == null || cTypes.Length == 0) return 0;
+            if (cTypes.Length == 1) return 1;
+            if (cTypes.Length == 2) return (int)(total / cTypes[0] + 1);
 
-            if (cTypes.Length == 1)
-            {
-                Console.WriteLine($"ac({total}, {arrToStr(cTypes)} = 1");
-                return 1;
-            }
-            if (cTypes.Length == 2) 
-            {
-                Console.WriteLine($"ac({total}, {arrToStr(cTypes)} = {total / cTypes[0]}");
-                return total / cTypes[0] + (total % cTypes[0] == 0 ? 1 : 0);
-            }
-
-            int max0 = total / cTypes[0];
             int count = 0;
-            int [] ncTypes = cTypes.Where(c => c != cTypes[0]).ToArray();
-            for(int i = 0; i <= max0; i ++)
-            {
-                count += ac(total - i * cTypes[0], ncTypes);
-            }
+            for(int i = 0; i <= total / cTypes[0]; i ++) count += CountArrangement(total - i * cTypes[0], cTypes.Where(c => c != cTypes[0]).ToArray());
 
-            Console.WriteLine($"ac({total}, {arrToStr(cTypes)} = {count}");
             return count;
         }
 
-        public string arrToStr(int [] arr)
-        {
-            if (arr == null || arr.Length < 1) return "[]";
-
-            string s = "[" + arr[0];
-            for(int i = 1; i < arr.Length; i ++) s = s + ", " + arr[i].ToString();
-            s = s + "]";
-
-            return s;
-        }
         public override string solution2()
         {
             return "";

@@ -166,7 +166,7 @@ namespace ProjectEulerLib
                         {
                             list.Add(grid[i][j]);
                         }
-                        catch (Exception ex)
+                        catch (Exception )
                         {
 
                         }
@@ -196,7 +196,7 @@ namespace ProjectEulerLib
                         {
                             list.Add(grid[i][j]);
                         }
-                        catch (Exception ex)
+                        catch
                         {
 
                         }

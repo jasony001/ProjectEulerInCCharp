@@ -51,7 +51,6 @@ namespace ProjectEulerLib.MoreMath
             return primeFactorsDict;
         }
 
-        Dictionary<List<long>, long> powResult;
 
 
         public List<long> GetFactors(long n)

@@ -100,7 +100,6 @@ namespace ProjectEulerLib
 
             foreach(long b in primesUnder1000)
             {
-                int pCount = 0;
                 for(int a = (int)(1 - b); a <= 1000; a ++)
                 {
                     if (!primesUnder1000.Contains(1 + a + b)) continue;

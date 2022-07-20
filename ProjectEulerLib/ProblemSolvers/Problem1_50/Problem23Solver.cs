@@ -94,9 +94,9 @@ Find the sum of all the positive integers which cannot be written as the sum of 
                         abundantNumbers.Add(i);
                     }
                 }
-                catch (Exception ex)
+                catch 
                 {
-                    int x = 0;
+                    
                 }
             }
             return abundantNumbers;

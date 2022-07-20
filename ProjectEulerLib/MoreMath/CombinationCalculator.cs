@@ -59,5 +59,26 @@ namespace ProjectEulerLib.MoreMath
 
             return result;
         }
+
+        public List<List<T>> ListPermutations<T>(List<T> list)
+        {
+            if (list == null || list.Count <= 1) return new List<List<T>> {list};
+            List<List<T>> resultList = new List<List<T>>();
+            for(int i0 = 0; i0 < list.Count; i0 ++)
+            {
+                List<T> subList = new List<T>();
+                for(int i = 0; i < list.Count; i ++) subList.Add(list[i]);
+                subList.Remove(list[i0]);
+                foreach(List<T> oneSubPermutations in ListPermutations(subList))
+                {
+                    List<T> oneArrangement = new List<T>();
+                    oneArrangement.Add(list[i0]);
+                    oneArrangement.AddRange(oneSubPermutations);
+                    resultList.Add(oneArrangement);
+                }
+            }
+
+            return resultList;
+        }
     }
 }

@@ -76,10 +76,6 @@ What is the total of all the name scores in the file?";
 
         private int GetNameValue(string name)
         {
-            if (name == "COLIN")
-            {
-                int x = 0;
-            }
             int sum = 0;
             foreach(char c in name.ToLower())
             {
