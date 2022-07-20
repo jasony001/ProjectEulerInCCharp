@@ -26,7 +26,10 @@ console.log(problemSolutions)
                                     solution {s.version}
                                 </div>
                                 <div className={styles["solution-summary"]}>
-                                <div>Answer: {s.answer}</div>
+                                <div>Answer: {s.answer.split("\n")
+                                .map((i, index) => (
+                                    <p key={index}>{i}</p>
+                                ))}</div>
                                 <div>
                                     Calculation Time: {s.testRunElapsedTime}
                                 </div>
