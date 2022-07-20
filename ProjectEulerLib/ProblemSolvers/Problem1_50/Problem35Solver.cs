@@ -87,10 +87,7 @@ namespace ProjectEulerLib
                 long n = candidates[0];
                 List<long> temp = new List<long>();
                 bool IsQualify = true;
-                if(n > 1000)
-                {
-                    int p = 1;
-                }
+
                 foreach(long l in GetShuffledNumberList(n))
                 {
                     if (!primes.Contains(l)) {IsQualify = false;  break;}
