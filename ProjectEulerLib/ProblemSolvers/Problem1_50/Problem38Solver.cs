@@ -52,7 +52,7 @@ namespace ProjectEulerLib
                     if(maxP < Convert.ToInt64(s))
                     {
                         maxP = Convert.ToInt64(s);
-                        Console.WriteLine(s);
+                        Console.WriteLine($"{n} * {i - 1} concatenate = {s}");
                     }
                 }
             }
