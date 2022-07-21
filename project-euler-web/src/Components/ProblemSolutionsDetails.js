@@ -8,7 +8,6 @@ const ProblemSolutionsDetails = ({ problemSolutions }) => {
         fetch("https://localhost:5001/GitHubUserInfo/AccessToken")
         .then(r => r.json())
         .then(d => {
-            console.log(d.token)
             let pid = problemSolutions.id * 1;
             if (pid < 0) return;
     
@@ -22,7 +21,6 @@ const ProblemSolutionsDetails = ({ problemSolutions }) => {
     
             let contentPath = `/ProjectEulerLib/ProblemSolvers/Problem${lowerBound}_${upperBound}/Problem${problemSolutions.id}Solver.cs`
             let apiUrl = `https://api.github.com/repos/jasony001/ProjectEulerInCSharp/contents/${contentPath}`;
-            console.log(apiUrl);
 
             fetch(apiUrl, {
                 method:"GET",
@@ -36,15 +34,14 @@ const ProblemSolutionsDetails = ({ problemSolutions }) => {
             .then(r => {
                 setSourceCodeLines(null);
                 if (r.status === 200){
-                    
                     return r.json();
                 } else {
-                    console.log(r.status);
+                    throw new Error("not pushed yet");
                 }
             })
             .then(d => {
                 setSourceCodeLines(atob(d.content.replaceAll('\\n', '')))
-            });
+            }).catch(err => console.log(err.message));
         });
     }, [problemSolutions.id])
 

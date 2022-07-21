@@ -42,7 +42,36 @@ Find the sum of all numbers, less than one million, which are palindromic in bas
 
         public override string solution1()
         {
-            return "";
+            long sum = 0;
+            for(long n = 1; n <= 1000000; n ++)
+            {
+                if (n % 10 == 0) continue;
+                if (!IsPalindrome(n, 10)) continue;
+                if (!IsPalindrome(n, 2)) continue;
+                sum += n;
+            }
+
+            return sum.ToString();
+        }
+
+        bool IsPalindrome(long n, int baseNumber)
+        {
+            if (n <= 0 || (baseNumber != 2 && baseNumber != 10)) return false;
+
+            long x = n;
+            List<int> digits = new List<int>();
+            while (x > 0)
+            {
+                digits.Insert(0, (int)(x % baseNumber));
+                x /= baseNumber;
+            }
+
+            for(int i = 0; i < digits.Count / 2; i ++)
+            {
+                if (digits[i] != digits[digits.Count - 1 - i]) return false;
+            }
+
+            return true;
         }
 
         public override string solution2()
