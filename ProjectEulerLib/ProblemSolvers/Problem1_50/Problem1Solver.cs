@@ -7,39 +7,6 @@ namespace ProjectEulerLib
 {
     public class Problem1Solver : ProblemSolver
     {
-        List<List<string>> sourceCodeLinesList = new List<List<string>>{
-            new List<string> {
-        "        private int sumOfNMultiply(int n)",
-        "        {",
-        "            if (n <= 0 || upperBound <= 0) return 0;",
-        "",
-        "            int x = upperBound / n - (!isCloseOnRight && upperBound % n == 0 ? 1 : 0);",
-        "",
-        "            return n * x * (x + 1) / 2;",
-        "        }",
-        "",
-        "        public override string solution1Description",
-        "        {",
-        "            get",
-        "            {",
-        "                return \"n * x * (x + 1) / 2. (sum n = 3) + (sum n = 5) - sum (n = 15_=)\";",
-        "            }",
-        "        }"
-                        },
-            new List<string> {
-        "        public override int solution2()",
-        "        {",
-        "            int sum = 0;",
-        "            for (int i = 0; i < (isCloseOnRight ? upperBound + 1 : upperBound); i++)",
-        "            {",
-        "                if (i % 3 == 0 || i % 5 == 0)",
-        "                    sum += i;",
-        "            }",
-        "            return sum;",
-        "        }",
-                    },
-        };
-
         public Problem1Solver() : base()
         {
             Problem.Id = 1;
@@ -56,7 +23,6 @@ namespace ProjectEulerLib
                 ProblemId = 1,
                 Description = "n * x * (x + 1) / 2. (sum n = 3) + (sum n = 5) - sum (n = 15)",
                 Version = 1,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[0])
             });
 
             Problem.Solutions.Add(new Solution
@@ -64,7 +30,6 @@ namespace ProjectEulerLib
                 ProblemId = 1,
                 Description = "Brutal Force",
                 Version = 2,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[1])
             });
         }
 

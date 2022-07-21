@@ -10,35 +10,6 @@ namespace ProjectEulerLib
     public class Problem13Solver : ProblemSolver
     {
 
-        List<List<string>> sourceCodeLinesList = new List<List<string>>{
-            new List<string> {
-"public override long solution1()",
-"        {",
-"            int carryOver = 0;",
-"            for(int i = 0; i < 41; i ++)",
-"            {",
-"                for(int j = 0; j < 100; j ++)",
-"                {",
-"                    carryOver += ((bigNumberList[j][49 - i] - '0'));",
-"                }",
-"                carryOver /=10;",
-"            }",
-"",
-"            long sum = carryOver;",
-"            for(int j = 0; j < 100; j ++)",
-"            {",
-"                long big10DigitNumber = Convert.ToInt64(bigNumberList[j].Substring(0, 9));",
-"                sum += big10DigitNumber;",
-"            }",
-"            ",
-"            return Convert.ToInt64(sum.ToString().Substring(0, 10));",
-"        }",
-            },
-            new List<string>{
-
-            }
-        };
-
         List<string> bigNumberList = new List<string>{
             "37107287533902102798797998220837590246510135740250",
 "46376937677490009712648124896970078050417018260538",
@@ -159,14 +130,12 @@ namespace ProjectEulerLib
                 ProblemId = 13,
                 Description = "Carry the last 41 digits one dgit at a time, then add up the 100 first 9 digits as Int64, take the first 10 digit of the sum",
                 Version = 1,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[0])
             });
             Problem.Solutions.Add(new Solution
             {
                 ProblemId = 13,
                 Description = "Custom BigNumber class",
                 Version = 2,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[0])
             });
         }
 

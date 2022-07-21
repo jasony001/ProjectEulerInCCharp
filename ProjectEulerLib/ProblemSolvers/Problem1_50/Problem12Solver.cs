@@ -8,15 +8,6 @@ namespace ProjectEulerLib
     public class Problem12Solver : ProblemSolver
     {
 
-        List<List<string>> sourceCodeLinesList = new List<List<string>>{
-            new List<string> {
-
-            },
-            new List<string>{
-
-            }
-        };
-
         public Problem12Solver() : base()
         {
             Problem.Id = 12;
@@ -42,14 +33,12 @@ namespace ProjectEulerLib
                 ProblemId = 12,
                 Description = "17,000 milliseconds! Get count factors of a number: get map of prime factors, for example 360: {{2,3}, {3, 2}, {5, 1}}. Count all the combinations.",
                 Version = 1,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[0])
             });
             // Problem.Solutions.Add(new Solution
             // {
             //     ProblemId = 2,
             //     Description = "Flatten the grid, build rowLists, columnLists, ForwardDiagonalLists, backDiagonalLists. Then loop to find the max product of 4.",
             //     Version = 2,
-            //     SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[1])
             // });
         }
         

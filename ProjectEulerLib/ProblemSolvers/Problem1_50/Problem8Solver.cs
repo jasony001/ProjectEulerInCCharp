@@ -8,28 +8,6 @@ namespace ProjectEulerLib
     public class Problem8Solver : ProblemSolver
     {
 
-        List<List<string>> sourceCodeLinesList = new List<List<string>>{
-            new List<string> {
-"        public override string solution1()",
-"        {",
-"            ProjectEulerLib.MoreMath.PrimeCalculator primeCalculator = new ProjectEulerLib.MoreMath.PrimeCalculator();",
-"            long upperBound = Problem.CalculatedIncludedUpperBound * 2;",
-"            long increment = Problem.CalculatedIncludedUpperBound * 2;",
-"            long [] primes =  primeCalculator.SeiveOfEratosthenes(upperBound);",
-"            while (primes.Length < Problem.CalculatedIncludedUpperBound + 1)",
-"            {",
-"                upperBound += increment;",
-"                primes = primeCalculator.SeiveOfEratosthenes(primes, upperBound);",
-"            }",
-"",
-"            return primes[Problem.CalculatedIncludedUpperBound].ToString();",
-"        }",
-            },
-            new List<string>{
-
-            }
-        };
-
 string ProblmeParamter = 
 @"73167176531330624919225119674426574742355349194934|
 96983520312774506326239578318016984801869478851843|
@@ -70,14 +48,12 @@ string ProblmeParamter =
                 ProblemId = 8,
                 Description = "Brutal force",
                 Version = 1,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[0])
             });
             // Problem.Solutions.Add(new Solution
             // {
             //     ProblemId = 2,
             //     Description = "Build factor list, foreach number add dividen remainder",
             //     Version = 2,
-            //     SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[1])
             // });
         }
 

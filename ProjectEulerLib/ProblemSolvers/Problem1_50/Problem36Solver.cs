@@ -5,21 +5,25 @@ using ProjectEulerDataContracts;
 
 namespace ProjectEulerLib
 {
-    public class Problem28Solver : ProblemSolver
+    public class Problem36Solver : ProblemSolver
     {
-
-        public Problem28Solver() : base()
+        public Problem36Solver() : base()
         {
-            Problem.Id = 28;
+            Problem.Id = 36;
             Problem.UpperBound = 20;
             Problem.IsClosedOnRight = true;
-            Problem.Title = "Number spiral diagonals";
-            Problem.Description = "";
+            Problem.Title = "Double-base palindromes";
+            Problem.Description = 
+@"The decimal number, 585 = 1001001001 (binary), is palindromic in both bases.
+
+Find the sum of all numbers, less than one million, which are palindromic in base 10 and base 2.
+
+(Please note that the palindromic number, in either base, may not include leading zeros.)";
 
             Problem.Solutions.Add(new Solution
             {
-                ProblemId = 28,
-                Description = "When the size is s, the 4 corners are s^2, s^2 - (s - 1), s^2 - 2(s - 1), s^2 - 3(s - 1)",
+                ProblemId = 36,
+                Description = "",
                 Version = 1,
             });
             // Problem.Solutions.Add(new Solution
@@ -38,15 +42,7 @@ namespace ProjectEulerLib
 
         public override string solution1()
         {
-            long sum = 1;
-            int l = 3;
-            while(l <= 1001)
-            {
-                sum += 4 * l * l - 6 * l + 6;
-                l +=2;
-            }
-
-            return sum.ToString();
+            return "";
         }
 
         public override string solution2()

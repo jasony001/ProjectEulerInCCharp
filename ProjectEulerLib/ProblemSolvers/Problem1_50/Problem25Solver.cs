@@ -8,47 +8,6 @@ namespace ProjectEulerLib
     public class Problem25Solver : ProblemSolver
     {
 
-        List<List<string>> sourceCodeLinesList = new List<List<string>>{
-            new List<string> {
-"double Phi = (1 + Math.Sqrt(5)) / 2;",
-"            double phi = (1 - Math.Sqrt(5)) / 2;",
-"",
-"            long n = 4780;",
-"            double logF = 0;",
-"            while(logF < 999)",
-"            {",
-"                double pdP = (1 - Math.Sqrt(5)) / (1 + Math.Sqrt(5));//(3 - Math.Sqrt(5)) / (-2);",
-"                logF = n * Math.Log(Phi, 10) + Math.Log(1 - Math.Pow(pdP, n), 10)",
-"                 - Math.Log(Math.Sqrt(5), 10);",
-"",
-"                n ++;",
-"            }",
-"            return (n - 1).ToString();",
-            },
-            new List<string>{
-"            double Phi = (1 + MathF.Sqrt(5)) / 2;",
-"            double n = (999 + Math.Log(Math.Sqrt(5), 10)) / Math.Log(Phi, 10);",
-"            ",
-"            return ((int)(Math.Ceiling(n))).ToString();",
-            },
-            new List<string>{
-"            List<List<int>> fList = new List<List<int>>",
-"                {new List<int>{0}, new List<int>{1}};",
-"            ",
-"            int n = 2;",
-"            do {",
-"                fList.Add(AddTwoPreviousF(fList[n -1], fList[n -2]));",
-"                if (n == 4780)",
-"                {",
-"                    int size = fList[n].Count;",
-"                }",
-"                n ++;",
-"            } while (fList[n - 1].Count < 1000);",
-"",
-"            return (n-1).ToString();",
-            }
-        };
-
         public Problem25Solver() : base()
         {
             Problem.Id = 25;
@@ -84,21 +43,18 @@ What is the index of the first term in the Fibonacci sequence to contain 1000 di
                 ProblemId = 25,
                 Description = "This is a mah problem. Cannor brutal force using the Phi formula f(n) = (Phi^n - phi^n) / sqrt(5) , even with the phi formula. blows at 1476. Use log10 on both side.",
                 Version = 1,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[0])
             });
             Problem.Solutions.Add(new Solution
             {
                 ProblemId = 0,
                 Description = "phi**n/sqrt(5) > 10**999",
                 Version = 2,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[1])
             });
             Problem.Solutions.Add(new Solution
             {
                 ProblemId = 0,
                 Description = "Brutal force, adding two previous numbers.",
                 Version = 3,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[2])
             });
         }
 

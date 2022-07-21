@@ -7,34 +7,6 @@ namespace ProjectEulerLib
 {
     public class Problem31Solver : ProblemSolver
     {
-
-        List<List<string>> sourceCodeLinesList = new List<List<string>>{
-            new List<string> {
-"public override string solution1()",
-"        {",
-"            if (Problem.CalculatedIncludedUpperBound < 0) return \"0\";",
-"            return CountArrangement(Problem.CalculatedIncludedUpperBound, new int[]{200, 100, 50, 20, 10, 5, 2, 1}).ToString();",
-"        }",
-"",
-"        public int CountArrangement(long total, int[] cTypes)",
-"        {",
-"            if (total == 0) return 1;",
-"            if (cTypes == null || cTypes.Length == 0) return 0;",
-"            if (cTypes.Length == 1) return 1;",
-"            if (cTypes.Length == 2) return (int)(total / cTypes[0] + 1);",
-"",
-"            int count = 0;",
-"            for(int i = 0; i <= total / cTypes[0]; i ++) count += CountArrangement(total - i * cTypes[0], cTypes.Where(c => c != cTypes[0]).ToArray());",
-"",
-"            return count;",
-"        }",
-"",
-            },
-            new List<string>{
-
-            }
-        };
-
         public Problem31Solver() : base()
         {
             Problem.Id = 31;
@@ -60,14 +32,12 @@ How many different ways can £2 be made using any number of coins?";
 You could translate recursive to loops (the 'count down' solution), but then you have to change the code when the upperBound changes (total of 200 P).
 Fot this problem, the recursive is 6 levels deep at the most.",
                 Version = 1,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[0])
             });
             // Problem.Solutions.Add(new Solution
             // {
             //     ProblemId = 0,
             //     Description = "Flatten the grid, build rowLists, columnLists, ForwardDiagonalLists, backDiagonalLists. Then loop to find the max product of 4.",
             //     Version = 2,
-            //     SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[1])
             // });
         }
 

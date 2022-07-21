@@ -14,21 +14,6 @@ namespace ProjectEulerLib
         }
 
         public Problem Problem { get; set; }
-
-        public List<SolutionCode> ConvertStringListToSolutionCodeList(List<string> sourceCodeLines)
-        {
-            List<SolutionCode> sourceCodeList = new List<SolutionCode>();
-            for (int lineNumber = 1; lineNumber <= sourceCodeLines.Count; lineNumber++)
-            {
-                sourceCodeList.Add(new SolutionCode
-                {
-                    LineNumber = lineNumber,
-                    Code = sourceCodeLines[lineNumber - 1],
-                });
-            }
-            return sourceCodeList;
-        }
-
         public virtual string solution1() { throw new NotImplementedException("solution1 is not implemented"); }
         public virtual string solution2() { throw new NotImplementedException("solution2 is not implemented"); }
         public virtual string solution3() { throw new NotImplementedException("solution3 is not implemented"); }

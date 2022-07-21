@@ -8,56 +8,6 @@ namespace ProjectEulerLib
     public class Problem11Solver : ProblemSolver
     {
 
-        List<List<string>> sourceCodeLinesList = new List<List<string>>{
-            new List<string> {
-
-            },
-            new List<string>{
-"        public override string solution2()",
-"        {",
-"            List<int> numbers = GetNumberList();",
-"            List<List<int>> allLists = new List<List<int>>();",
-"            allLists.AddRange(GetHorizontalLists_2(numbers));",
-"            allLists.AddRange(GetVerticalLists_2(numbers));",
-"            allLists.AddRange(GetForwardDiagonalLists_2(numbers));",
-"            allLists.AddRange(GetBackDiagonalLists_2(numbers));",
-"",
-"            long maxP = 0;",
-"",
-"            foreach (List<int> list in allLists)",
-"                maxP = Math.Max(maxP, GetMaxProductOf4(list));",
-"",
-"            return maxP.ToString();",
-"        }",
-"",
-"        List<List<int>> GetForwardDiagonalLists_2(List<int> numbers)",
-"        {",
-"            List<int> forwardDiagonalStart = new List<int>{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,",
-"                    39, 59, 79, 99, 119, 139, 159, 179, 199, 219, 239, 259, 279, 299, 319, 339, 359, 379, 399};",
-"",
-"            List<List<int>> forwardDiagonalLists = new List<List<int>>();",
-"",
-"            foreach (int fs in forwardDiagonalStart)",
-"            {",
-"                int r = fs / 20;",
-"                int c = fs % 20;",
-"",
-"                List<int> list = new List<int>();",
-"                while (r >= 0 && r < 20 && c >= 0 && c < 20)",
-"                {",
-"                    list.Add(numbers[r * 20 + c]);",
-"                    r++;",
-"                    c--;",
-"                }",
-"",
-"                forwardDiagonalLists.Add(list);",
-"            }",
-"",
-"            return forwardDiagonalLists;",
-"        }",
-            }
-        };
-
         int[][] grid = new int[][]
         {
             new int[] {08, 02, 22, 97, 38, 15, 00, 40, 00, 75, 04, 05, 07, 78, 52, 12, 50, 77, 91, 08},
@@ -99,14 +49,12 @@ namespace ProjectEulerLib
                 ProblemId = 11,
                 Description = "no good",
                 Version = 1,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[0])
             });
             Problem.Solutions.Add(new Solution
             {
                 ProblemId = 2,
                 Description = "Flatten the grid, build rowLists, columnLists, ForwardDiagonalLists, backDiagonalLists. Then loop to find the max product of 4.",
                 Version = 2,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[1])
             });
         }
 

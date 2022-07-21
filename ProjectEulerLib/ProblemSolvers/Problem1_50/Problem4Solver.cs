@@ -7,42 +7,6 @@ namespace ProjectEulerLib
 {
     public class Problem4Solver : ProblemSolver
     {
-
-        List<List<string>> sourceCodeLinesList = new List<List<string>>{
-            new List<string> {
-" public override string solution1()",
-"        {",
-"            long maxP = 0;",
-"            for (int i = 999; i > 100; i--)",
-"            {",
-"                for (int j = 999; j > 100; j--)",
-"                {",
-"                    long product = i * j;",
-"                    if (product > 99999)",
-"                    {",
-"                        if (",
-"                            product / 100000 == product % 10 &&",
-"                            product / 10000 % 10 == product % 100 / 10 &&",
-"                            product / 1000 % 10 == product % 1000 / 100",
-"                        ) maxP = Math.Max(maxP, product);",
-"                    }",
-"                    else",
-"                    {",
-"                        if (",
-"                            product / 10000 == product % 10 &&",
-"                            product / 1000 % 10 == product % 100 / 10",
-"                        ) maxP = Math.Max(maxP, product);",
-"                    }",
-"                }",
-"            }",
-"            return maxP.ToString();",
-"        }",
-            },
-            new List<string>{
-
-            }
-        };
-
         public Problem4Solver() : base()
         {
             Problem.Id = 4;
@@ -59,14 +23,12 @@ namespace ProjectEulerLib
                 ProblemId = 4,
                 Description = "Loop, save max",
                 Version = 1,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[0])
             });
             Problem.Solutions.Add(new Solution
             {
                 ProblemId = 2,
                 Description = "Go through each palindrome numbers, big to small, check IsProdOfTwo3DigitsNumbers",
                 Version = 2,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[1])
             });
         }
 

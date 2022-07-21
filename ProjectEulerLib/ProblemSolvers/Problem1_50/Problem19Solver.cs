@@ -9,17 +9,6 @@ namespace ProjectEulerLib
     {
         const long HALF_MAX = long.MaxValue / 2;
 
-        List<List<string>> sourceCodeLinesList = new List<List<string>>{
-            new List<string> {
-
-            },
-            new List<string>{
-
-            },
-            new List<string>{
-            },
-        };
-
         public Problem19Solver() : base()
         {
             Problem.Id = 19;
@@ -47,21 +36,18 @@ How many Sundays fell on the first of the month during the twentieth century (1 
                 ProblemId = 19,
                 Description = "",
                 Version = 1,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[0])
             });
             // Problem.Solutions.Add(new Solution
             // {
             //     ProblemId = 19,
             //     Description = "put number in a list, each item is 1 digit. use junior school math multiplication carry digit. Perform carry when any of the item is over long.Maxvalue / 2.",
             //     Version = 2,
-            //     SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[1])
             // });
             // Problem.Solutions.Add(new Solution
             // {
             //     ProblemId = 19,
             //     Description = "Rever the number, save number 1234 in a list<int> {4, 3, 2, 1}. When perform carry, use List.Add instead of List.Insert.  Turned out that List.add costs same amount of time as List.Insert.",
             //     Version = 3,
-            //     SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[2])
             // });
         }
 

@@ -7,15 +7,6 @@ namespace ProjectEulerLib
 {
     public class Problem30Solver : ProblemSolver
     {
-        List<List<string>> sourceCodeLinesList = new List<List<string>>{
-            new List<string> {
-
-            },
-            new List<string>{
-
-            }
-        };
-
         public Problem30Solver() : base()
         {
             Problem.Id = 30;
@@ -41,14 +32,12 @@ Find the sum of all the numbers that can be written as the sum of fifth powers o
                 ProblemId = 30,
                 Description = "hand picked 301051 numbers, slower than brutal force",
                 Version = 1,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[0])
             });
             Problem.Solutions.Add(new Solution
             {
                 ProblemId = 0,
                 Description = "Brutal force 100 to 354294 (6 * 9^5)",
                 Version = 2,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[1])
             });
         }
 

@@ -8,14 +8,6 @@ namespace ProjectEulerLib
     public class Problem26Solver : ProblemSolver
     {
 
-        List<List<string>> sourceCodeLinesList = new List<List<string>>{
-            new List<string> {
-
-            },
-            new List<string>{
-
-            }
-        };
 
         public Problem26Solver() : base()
         {
@@ -44,14 +36,12 @@ Find the value of d < 1000 for which 1/d contains the longest recurring cycle in
                 ProblemId = 26,
                 Description = "",
                 Version = 1,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[0])
             });
             // Problem.Solutions.Add(new Solution
             // {
             //     ProblemId = 0,
             //     Description = "Flatten the grid, build rowLists, columnLists, ForwardDiagonalLists, backDiagonalLists. Then loop to find the max product of 4.",
             //     Version = 2,
-            //     SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[1])
             // });
         }
 

@@ -8,14 +8,6 @@ namespace ProjectEulerLib
     public class Problem22Solver : ProblemSolver
     {
 
-        List<List<string>> sourceCodeLinesList = new List<List<string>>{
-            new List<string> {
-
-            },
-            new List<string>{
-
-            }
-        };
 
         public Problem22Solver() : base()
         {
@@ -35,14 +27,12 @@ What is the total of all the name scores in the file?";
                 ProblemId = 22,
                 Description = "Binary tree, traverse recursively. Remember to remove the quote in name string.",
                 Version = 1,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[0])
             });
             // Problem.Solutions.Add(new Solution
             // {
             //     ProblemId = 0,
             //     Description = "Flatten the grid, build rowLists, columnLists, ForwardDiagonalLists, backDiagonalLists. Then loop to find the max product of 4.",
             //     Version = 2,
-            //     SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[1])
             // });
         }
 

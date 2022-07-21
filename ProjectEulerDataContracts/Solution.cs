@@ -8,7 +8,6 @@ namespace ProjectEulerDataContracts
     {
         public Solution()
         {
-            SolutionCodes = new List<SolutionCode>();
         }
 
         // [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -18,6 +17,5 @@ namespace ProjectEulerDataContracts
         public string Description { get; set; }
         public string Answer { get; set; }
         public int TestRunElapsedTime {get;set;}
-        public virtual List<SolutionCode> SolutionCodes { get; set; }
     }
 }

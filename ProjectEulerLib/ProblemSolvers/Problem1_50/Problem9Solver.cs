@@ -8,15 +8,6 @@ namespace ProjectEulerLib
     public class Problem9Solver : ProblemSolver
     {
 
-        List<List<string>> sourceCodeLinesList = new List<List<string>>{
-            new List<string> {
-
-            },
-            new List<string>{
-
-            }
-        };
-
 
         public Problem9Solver() : base()
         {
@@ -35,14 +26,12 @@ namespace ProjectEulerLib
                 ProblemId = 9,
                 Description = "let a + b + c = s, a^2 + b^2 = c^2; \n c = s - a - b \n (s - a - b)^2 = a^2 + b^2 \n b = (s^2 -2as) / (2s -2a)\n try a from 1 to 997, when b is an integer, that's the answer",
                 Version = 1,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[0])
             });
             // Problem.Solutions.Add(new Solution
             // {
             //     ProblemId = 2,
             //     Description = "Build factor list, foreach number add dividen remainder",
             //     Version = 2,
-            //     SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[1])
             // });
         }
 

@@ -9,43 +9,6 @@ namespace ProjectEulerLib
     {
         const long HALF_MAX = long.MaxValue / 2;
 
-        List<List<string>> sourceCodeLinesList = new List<List<string>>{
-            new List<string> {
-"        public override string solution1()",
-"        {",
-"            string [] oneToNineWords = ",
-"                new string []{\"one\", \"two\", \"three\", \"four\", \"five\", \"six\", \"seven\", \"eight\", \"nine\"};",
-"            string [] tenToNineTeenWords = ",
-"                new string []{\"ten\", \"eleven\", \"twelve\", \"thirteen\", \"fourteen\", \"fifteen\", \"sixteen\", \"seventeen\", \"eighteen\", \"nineteen\"};",
-"            string[] twentyToNinetyWords = ",
-"                new string []{\"twenty\", \"thirty\", \"forty\", \"fifty\", \"sixty\", \"seventy\", \"eighty\", \"ninety\"};",
-"",
-"",
-"            int oneToNine = 0;",
-"            foreach(var w in oneToNineWords) oneToNine +=  w.Length;",
-"",
-"",
-"            int tenToNineteen = 0;",
-"            foreach(var w in tenToNineTeenWords) tenToNineteen +=  w.Length;",
-"            Console.WriteLine($\"tenToNineteen = {tenToNineteen}\");",
-"            ",
-"            int twentyToNinetyNine = 0;",
-"            foreach (var w in twentyToNinetyWords) twentyToNinetyNine += w.Length * 10 + oneToNine;",
-"",
-"            int oneToNinetyNine = oneToNine + tenToNineteen + twentyToNinetyNine;",
-"            int total = oneToNinetyNine;",
-"            foreach(var w in oneToNineWords) total +=  (w.Length + \"hundred\".Length) * 100 + \"and\".Length * 99 + oneToNinetyNine;",
-"",
-"            return (total + \"onethousand\".Length).ToString();",
-"        }",
-            },
-            new List<string>{
-
-            },
-            new List<string>{
-            },
-        };
-
         public Problem17Solver() : base()
         {
             Problem.Id = 17;
@@ -64,21 +27,18 @@ NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-
                 ProblemId = 99999,
                 Description = "Count letters with fingers",
                 Version = 1,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[0])
             });
             // Problem.Solutions.Add(new Solution
             // {
             //     ProblemId = 17,
             //     Description = "",
             //     Version = 2,
-            //     SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[1])
             // });
             // Problem.Solutions.Add(new Solution
             // {
             //     ProblemId = 17,
             //     Description = "Rever the number, save number 1234 in a list<int> {4, 3, 2, 1}. When perform carry, use List.Add instead of List.Insert.  Turned out that List.add costs same amount of time as List.Insert.",
             //     Version = 3,
-            //     SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[2])
             // });
         }
         

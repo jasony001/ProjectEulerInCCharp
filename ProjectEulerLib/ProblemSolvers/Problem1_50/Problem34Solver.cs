@@ -8,18 +8,6 @@ namespace ProjectEulerLib
     public class Problem34Solver : ProblemSolver
     {
 
-        List<List<string>> sourceCodeLinesList = new List<List<string>>{
-            new List<string> {
-
-            },
-            new List<string>{
-
-            },
-            new List<string>{
-
-            }
-        };
-
         public Problem34Solver() : base()
         {
             Problem.Id = 34;
@@ -33,21 +21,18 @@ namespace ProjectEulerLib
                 ProblemId = 34,
                 Description = "",
                 Version = 1,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[0])
             });
             // Problem.Solutions.Add(new Solution
             // {
             //     ProblemId = 0,
             //     Description = "",
             //     Version = 2,
-            //     SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[1])
             // });
             // Problem.Solutions.Add(new Solution
             // {
             //     ProblemId = 0,
             //     Description = "",
             //     Version = 3,
-            //     SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[2])
             // });
         }
 

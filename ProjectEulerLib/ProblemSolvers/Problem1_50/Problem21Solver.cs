@@ -8,15 +8,6 @@ namespace ProjectEulerLib
     public class Problem21Solver : ProblemSolver
     {
 
-        List<List<string>> sourceCodeLinesList = new List<List<string>>{
-            new List<string> {
-
-            },
-            new List<string>{
-
-            }
-        };
-
         public Problem21Solver() : base()
         {
             Problem.Id = 21;
@@ -36,14 +27,12 @@ Evaluate the sum of all the amicable numbers under 10000.";
                 ProblemId = 21,
                 Description = "",
                 Version = 1,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[0])
             });
             // Problem.Solutions.Add(new Solution
             // {
             //     ProblemId = 0,
             //     Description = "Flatten the grid, build rowLists, columnLists, ForwardDiagonalLists, backDiagonalLists. Then loop to find the max product of 4.",
             //     Version = 2,
-            //     SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[1])
             // });
         }
 

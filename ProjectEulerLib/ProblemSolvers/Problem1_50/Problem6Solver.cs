@@ -8,14 +8,6 @@ namespace ProjectEulerLib
     public class Problem6Solver : ProblemSolver
     {
 
-        List<List<string>> sourceCodeLinesList = new List<List<string>>{
-            new List<string> {
-
-            },
-            new List<string>{
-
-            }
-        };
 
         public Problem6Solver() : base()
         {
@@ -40,14 +32,12 @@ namespace ProjectEulerLib
                     + "f(n) = f(n-1) + n^3 - n^2\n"
                     + "f(1) = 0, loop through 2 to 100, find f(2), then f(3), ... f(100)",
                 Version = 1,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[0])
             });
             Problem.Solutions.Add(new Solution
             {
                 ProblemId = 2,
                 Description = "Brutal force",
                 Version = 2,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[1])
             });
         }
 

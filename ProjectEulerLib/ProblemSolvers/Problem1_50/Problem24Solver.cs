@@ -8,14 +8,6 @@ namespace ProjectEulerLib
     public class Problem24Solver : ProblemSolver
     {
 
-        List<List<string>> sourceCodeLinesList = new List<List<string>>{
-            new List<string> {
-
-            },
-            new List<string>{
-
-            }
-        };
 
         public Problem24Solver() : base()
         {
@@ -33,14 +25,12 @@ What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 
                 ProblemId = 24,
                 Description = "By hand, how many 9! left, how many 8! left, etc..",
                 Version = 1,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[0])
             });
             // Problem.Solutions.Add(new Solution
             // {
             //     ProblemId = 0,
             //     Description = "Flatten the grid, build rowLists, columnLists, ForwardDiagonalLists, backDiagonalLists. Then loop to find the max product of 4.",
             //     Version = 2,
-            //     SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[1])
             // });
         }
 

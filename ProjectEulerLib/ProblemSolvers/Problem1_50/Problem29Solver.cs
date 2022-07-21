@@ -7,43 +7,6 @@ namespace ProjectEulerLib
 {
     public class Problem29Solver : ProblemSolver
     {
-
-        List<List<string>> sourceCodeLinesList = new List<List<string>>{
-            new List<string> {
-"           Dictionary<int, bool[]> dict = new Dictionary<int, bool[]>();",
-"            for(int n = 2; n <= 100; n ++) dict.Add(n, new bool[1]);",
-"",
-"            for(int n = 2; n <= 100; n ++)",
-"            {",
-"                if (!dict.ContainsKey(n)) continue;",
-"",
-"                int maxPow = 1;",
-"                while(Math.Pow(n, maxPow + 1) <= 100)",
-"                {",
-"                    maxPow ++;",
-"                    dict.Remove((int)Math.Pow(n, maxPow));",
-"                }",
-"",
-"                dict[n] = new bool[maxPow * 100 + 1];",
-"                for(int p = 2; p <= 100; p ++)",
-"                    for(int m = 1; m <= maxPow; m ++) ",
-"                        dict[n][m * p] = true;",
-"            }",
-"",
-"            int sum = 0;",
-"            foreach (int key in dict.Keys)",
-"                sum += dict[key].Where(b => b).Count();",
-"",
-"            return sum.ToString();",
-            },
-            new List<string>{
-
-            },
-            new List<string>{
-
-            }
-        };
-
         public Problem29Solver() : base()
         {
             Problem.Id = 10;
@@ -76,21 +39,18 @@ mark (1...100), ... 4(1...100) items to true in the [2] bool array
 count all the bool items in all the bool array
 ",
                 Version = 1,
-                SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[0])
             });
             // Problem.Solutions.Add(new Solution
             // {
             //     ProblemId = 0,
             //     Description = "",
             //     Version = 2,
-            //     SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[1])
             // });
             // Problem.Solutions.Add(new Solution
             // {
             //     ProblemId = 0,
             //     Description = "",
             //     Version = 3,
-            //     SolutionCodes = ConvertStringListToSolutionCodeList(sourceCodeLinesList[2])
             // });
         }
 

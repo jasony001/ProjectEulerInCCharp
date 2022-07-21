@@ -20,7 +20,7 @@ namespace ProjectEulerWebAPI.Controllers
         private readonly ILogger<ProblemControllers> _logger;
         private readonly ProblemSolverFactory _problemSolverFactory;
 
-        
+
         public ProblemControllers(ILogger<ProblemControllers> logger, ProblemSolverFactory problemSolverFactory)
         {
             _logger = logger;
@@ -34,7 +34,7 @@ namespace ProjectEulerWebAPI.Controllers
         {
             try
             {
-                if (!problemId.HasValue) throw new ArgumentException ("problemId is required.");
+                if (!problemId.HasValue) throw new ArgumentException("problemId is required.");
                 ProblemSolver p = _problemSolverFactory.GetProblem(problemId.Value);
                 if (p == null) throw new ArgumentException($"problem{problemId} is not yet defined.");
                 p.SolveProblem();
