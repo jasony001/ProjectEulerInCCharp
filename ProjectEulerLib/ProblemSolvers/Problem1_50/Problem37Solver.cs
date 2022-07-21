@@ -24,7 +24,7 @@ NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.";
             Problem.Solutions.Add(new Solution
             {
                 ProblemId = 37,
-                Description = "",
+                Description = "Last digit must be 3 or 7. Too lazy to exclude 2, 4, 5, 6, 7 in digits 2 to length -1. ",
                 Version = 1,
             });
             // Problem.Solutions.Add(new Solution
