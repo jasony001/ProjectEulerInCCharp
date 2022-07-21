@@ -77,9 +77,9 @@ namespace ProjectEulerLib
                         Problem.Solutions[i - 1].TestRunElapsedTime = (int)(stopWatch.ElapsedMilliseconds);
                     }
                 }
-                catch (System.Exception ex)
+                catch 
                 {
-                    Console.WriteLine(ex.Message);
+                    Console.WriteLine($"Solution {i} not implemented");
                 }
             }
         }

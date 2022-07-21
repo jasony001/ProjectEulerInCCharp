@@ -51,29 +51,62 @@ namespace ProjectEulerLib
             // });
         }
 
-        public override string solution1()
+public override string solution1()
         {
-            List<int[]> fractionList = new List<int[]>();
-            for(int i1 = 2; i1 <= 9; i1 ++)
-            {
-                for(int i0 = i1; i0 <= 9; i0 ++)
-                {
-                    int numerator = i1 * 10 + i0;
-                    for(int i2 = 1; i2 <= 9; i2 ++)
-                    {
-                        int denominator = i0 * 10 + i2;
-                        if (denominator <= numerator) continue;
+            int count = 0;
+            int wrongNumerator = -1;
+            int wrongDenomenator = -1;
+            int numerator = 11;
+            int denomenator = 12;
+            long productOfWrongNumerators = 1;
+            long productOfWrongDenomenators = 1;
 
-                        if ((double)i1 / (double)i2 == (double)numerator / (double)denominator)
-                        {
-                            fractionList.Add(new int[]{numerator, denominator});
-                            Console.WriteLine($"{numerator}/{denominator}");
-                        }
+        try{
+            for ( numerator = 11; numerator < 100; numerator ++)
+            {
+                for( denomenator = numerator + 1; denomenator < 100; denomenator ++)
+                {
+                     wrongNumerator = -1;
+                     wrongDenomenator = -1;
+                    if (denomenator.ToString()[0] == numerator.ToString()[0] && numerator.ToString()[0] != '0')
+                    {
+                        wrongNumerator = numerator.ToString()[1] - '0';
+                        wrongDenomenator = denomenator.ToString()[1] - '0';
+                    } else if (denomenator.ToString()[1] == numerator.ToString()[0] && numerator.ToString()[0] != '0')
+                    {
+                        wrongNumerator = numerator.ToString()[1] - '0';
+                        wrongDenomenator = denomenator.ToString()[0] - '0';
+                    } else if (denomenator.ToString()[0] == numerator.ToString()[1] && numerator.ToString()[1] != '0')
+                    {
+                        wrongNumerator = numerator.ToString()[0] - '0';
+                        wrongDenomenator = denomenator.ToString()[1] - '0';
+                    } else if (denomenator.ToString()[1] == numerator.ToString()[1] && numerator.ToString()[1] != '0')
+                    {
+                        wrongNumerator = numerator.ToString()[0] - '0';
+                        wrongDenomenator = denomenator.ToString()[0] - '0';
+                    } else
+                    {
+                        continue;
                     }
+
+                    if (wrongNumerator * denomenator == numerator * wrongDenomenator)
+                    {
+
+                        productOfWrongNumerators *= wrongNumerator;
+                        productOfWrongDenomenators *= wrongDenomenator;
+                        Console.WriteLine($"{numerator}/{denomenator} = {wrongNumerator}/{wrongDenomenator}");
+                        count ++;
+                    }
+
                 }
             }
+        }
+        catch(Exception ex)
+        {
+            Console.WriteLine($"{ex.Message}: {numerator}/{denomenator}; {wrongNumerator}/{wrongDenomenator}");
+        }
 
-            return fractionList.Count.ToString();
+            return $"{productOfWrongNumerators}/{productOfWrongDenomenators}";
         }
 
         public override string solution2()
