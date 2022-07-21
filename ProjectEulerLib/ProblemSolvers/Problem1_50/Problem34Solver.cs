@@ -59,10 +59,6 @@ namespace ProjectEulerLib
             long answer = 0;
             for(long n = 10; n <= UpperBound; n ++)
             {
-                if (n == 40686)
-                {
-                    int y = 1;
-                }
                 long x = n;
                 long sum = 0;
                 while(x > 0)

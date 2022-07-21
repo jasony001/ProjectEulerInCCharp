@@ -49,18 +49,18 @@ Find the value of d < 1000 for which 1/d contains the longest recurring cycle in
         {
             int maxL = 0;
             int maxN = 0;
-            foreach(int n in new MoreMath.PrimeCalculator().SeiveOfEratosthenes(1000))
+            foreach (int n in new MoreMath.PrimeCalculator().GetPrimesUnderN(1000))
             {
                 int powOf10 = 1;
-                while(powOf10 * 10 <n) powOf10*= 10;
+                while (powOf10 * 10 < n) powOf10 *= 10;
 
                 int r = powOf10;
                 int l = 0;
                 while (r > 1)
                 {
-                    while(r < n) r *= 10;
+                    while (r < n) r *= 10;
                     r = r % n;
-                    l ++;
+                    l++;
                 }
 
                 if (r == 1 && l > maxL)

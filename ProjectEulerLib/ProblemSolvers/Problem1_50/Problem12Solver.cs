@@ -41,29 +41,29 @@ namespace ProjectEulerLib
             //     Version = 2,
             // });
         }
-        
+
         long CalculatedPrimeUpperBound = 6;
-        
-        long[] CalculatedPrimes = new long[] {2, 3};
+
+        long[] CalculatedPrimes = new long[] { 2, 3 };
 
         List<long> GetListsOfNumberOfPrimeFactors(long n)
         {
             if (n > CalculatedPrimeUpperBound)
             {
                 CalculatedPrimeUpperBound += 2000000;
-                CalculatedPrimes = new MoreMath.PrimeCalculator().SeiveOfEratosthenes(CalculatedPrimes, CalculatedPrimeUpperBound);
+                CalculatedPrimes = new MoreMath.PrimeCalculator().GetPrimesUnderN(CalculatedPrimes, CalculatedPrimeUpperBound);
             }
 
             long parm = n;
             long sqrtOfN = (long)(Math.Sqrt(n));
             List<long> result = new List<long>();
 
-            foreach(long p in CalculatedPrimes)
+            foreach (long p in CalculatedPrimes)
             {
                 int count = 0;
-                while(n % p == 0)
+                while (n % p == 0)
                 {
-                    count ++;
+                    count++;
                     n /= p;
                 }
                 if (count > 0) result.Add(count);
@@ -85,7 +85,7 @@ namespace ProjectEulerLib
                 n = x * (x + 1) / 2;
                 numberOfFactors = worker.GetFactors(n).Count;
 
-                x ++;
+                x++;
             }
 
             return (numberOfFactors > Problem.CalculatedIncludedUpperBound) ? n.ToString() : "No solution for any x(x+1)/2 when x < 1000000";

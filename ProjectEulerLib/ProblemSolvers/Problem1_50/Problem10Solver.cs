@@ -46,7 +46,7 @@ namespace ProjectEulerLib
 
         public long[] SeiveOfEratosthenes(long upperBound)
         {
-            long [] primes = new ProjectEulerLib.MoreMath.PrimeCalculator().SeiveOfEratosthenes(upperBound);
+            long[] primes = new ProjectEulerLib.MoreMath.PrimeCalculator().GetPrimesUnderN(upperBound);
             return primes;
             // long sqrtOfN = (long)(Math.Sqrt(upperBound));
             // bool[] bArray = new bool[upperBound + 1];

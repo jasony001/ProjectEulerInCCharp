@@ -7,8 +7,8 @@ namespace ProjectEulerLib
 {
     public class Problem27Solver : ProblemSolver
     {
-        long [] primesUnder1M;
-        long [] primesUnder1000;
+        long[] primesUnder1M;
+        long[] primesUnder1000;
 
         public Problem27Solver() : base()
         {
@@ -40,28 +40,28 @@ namespace ProjectEulerLib
 
         public override string solution1()
         {
-            primesUnder1M = new MoreMath.PrimeCalculator().SeiveOfEratosthenes(1000000);
-            primesUnder1000 = primesUnder1M.Where(p => p < 1000).ToArray();            
+            primesUnder1M = new MoreMath.PrimeCalculator().GetPrimesUnderN(1000000);
+            primesUnder1000 = primesUnder1M.Where(p => p < 1000).ToArray();
             // long product = 0;
             int maxN = 0;
             int maxA = 0;
             int maxB = 0;
 
-            foreach(long b in primesUnder1000)
+            foreach (long b in primesUnder1000)
             {
-                for(int a = (int)(1 - b); a <= 1000; a ++)
+                for (int a = (int)(1 - b); a <= 1000; a++)
                 {
                     if (!primesUnder1000.Contains(1 + a + b)) continue;
                     if (!primesUnder1000.Contains(b)) continue;
-                    if (!primesUnder1000.Contains(4 + 2*a + b)) continue;
-                    
+                    if (!primesUnder1000.Contains(4 + 2 * a + b)) continue;
+
                     int n = 3;
                     long p = f(n, a, (int)b);
                     while (primesUnder1M.Contains(p))
                     {
                         p = f(++n, a, (int)b);
                     }
-                    n --;
+                    n--;
                     if (n > maxN)
                     {
                         maxN = n;

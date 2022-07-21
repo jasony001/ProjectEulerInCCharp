@@ -39,11 +39,11 @@ namespace ProjectEulerLib
             ProjectEulerLib.MoreMath.PrimeCalculator primeCalculator = new ProjectEulerLib.MoreMath.PrimeCalculator();
             long upperBound = Problem.CalculatedIncludedUpperBound * 2;
             long increment = Problem.CalculatedIncludedUpperBound * 2;
-            long [] primes =  primeCalculator.SeiveOfEratosthenes(upperBound);
+            long[] primes = primeCalculator.GetPrimesUnderN(upperBound);
             while (primes.Length < Problem.CalculatedIncludedUpperBound + 1)
             {
                 upperBound += increment;
-                primes = primeCalculator.SeiveOfEratosthenes(primes, upperBound);
+                primes = primeCalculator.GetPrimesUnderN(primes, upperBound);
             }
 
             return primes[Problem.CalculatedIncludedUpperBound].ToString();

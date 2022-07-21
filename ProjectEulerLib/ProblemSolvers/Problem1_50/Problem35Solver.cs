@@ -38,7 +38,7 @@ namespace ProjectEulerLib
         public override string solution1()
         {
             MoreMath.PrimeCalculator primeCalculator = new MoreMath.PrimeCalculator();
-            long[] primes = primeCalculator.SeiveOfEratosthenes(1000000);
+            long[] primes = primeCalculator.GetPrimesUnderN(1000000);
             List<long> candidates = primes.Where(p => p > 10 && IsCandidate(p)).ToList();
             List<long> answers = new List<long>();
 
@@ -49,39 +49,39 @@ namespace ProjectEulerLib
                 bool IsQualify = true;
                 long[] rotatedNumberList = GetRotatedNumberList(n);
 
-                foreach(long l in GetRotatedNumberList(n))
+                foreach (long l in GetRotatedNumberList(n))
                 {
-                    if (!primes.Contains(l)) {IsQualify = false;  break;}
+                    if (!primes.Contains(l)) { IsQualify = false; break; }
                     if (!temp.Contains(l)) temp.Add(l);
                 }
 
-                foreach(long l in temp)
+                foreach (long l in temp)
                 {
-                    if (IsQualify) 
+                    if (IsQualify)
                         answers.Add(l);
 
                     candidates.Remove(l);
                 }
             }
 
-            answers.InsertRange(0, new List<long>{2, 3, 5, 7});
+            answers.InsertRange(0, new List<long> { 2, 3, 5, 7 });
             return answers.Count().ToString();
         }
 
         public bool IsCandidate(long n)
         {
             string s = n.ToString();
-            foreach(char c in new char[]{'0', '2', '4', '5', '6', '8'})
+            foreach (char c in new char[] { '0', '2', '4', '5', '6', '8' })
                 if (s.IndexOf(c) >= 0) return false;
-            
+
             return true;
         }
 
         long[] GetRotatedNumberList(long n)
         {
-            List<long> resultList = new List<long>{n};
+            List<long> resultList = new List<long> { n };
             long x = n;
-            while(true)
+            while (true)
             {
                 string s = x.ToString();
                 s = s.Substring(1) + s[0];

@@ -11,8 +11,8 @@ namespace ProjectEulerLib
         public Problem3Solver() : base()
         {
             Problem.Id = 3;
-            Problem.UpperBound = 600851475143 ;
-           
+            Problem.UpperBound = 600851475143;
+
             Problem.Title = "Largest prime factor";
             Problem.Description =
                 "The prime factors of 13195 are 5, 7, 13 and 29.\n"
@@ -36,12 +36,12 @@ namespace ProjectEulerLib
 
         public override string solution1()
         {
-            long [] primes = new ProjectEulerLib.MoreMath.PrimeCalculator().SeiveOfEratosthenes((long)(Math.Sqrt(Problem.UpperBound.Value)));
+            long[] primes = new ProjectEulerLib.MoreMath.PrimeCalculator().GetPrimesUnderN((long)(Math.Sqrt(Problem.UpperBound.Value)));
             long n = Problem.UpperBound.Value;
 
             long p = 0;
             long maxP = 0;
-            for(int i = primes.Count() - 1; i >= 0; i--)            
+            for (int i = primes.Count() - 1; i >= 0; i--)
             {
                 while (n % primes[i] == 0)
                 {
@@ -61,7 +61,7 @@ namespace ProjectEulerLib
 
             long p = 0;
             long maxP = 0;
-            for(int i = 2; i < Math.Sqrt(n); i++)            
+            for (int i = 2; i < Math.Sqrt(n); i++)
             {
                 while (n % i == 0)
                 {
