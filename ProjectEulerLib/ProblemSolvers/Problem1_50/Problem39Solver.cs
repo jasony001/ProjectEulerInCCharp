@@ -9,7 +9,7 @@ namespace ProjectEulerLib
     {
         public Problem39Solver() : base()
         {
-            Problem.Id = 399;
+            Problem.Id = 39;
             Problem.UpperBound = 20;
             Problem.IsClosedOnRight = true;
             Problem.Title = "Integer right triangles";
@@ -22,7 +22,7 @@ For which value of p ≤ 1000, is the number of solutions maximised?";
 
             Problem.Solutions.Add(new Solution
             {
-                ProblemId = 399,
+                ProblemId = 39,
                 Description = "loop: a < c, b < c, a + b + c <= 1000.",
                 Version = 1,
             });
@@ -44,32 +44,19 @@ For which value of p ≤ 1000, is the number of solutions maximised?";
         {
             Dictionary<int, int> pDict = new Dictionary<int, int>();
             for(int a = 1; a <=998; a ++)
-            {
                 for(int b = 1; b <= 998 - a; b ++)
-                {
                     for(int c = Math.Max(a, b) + 1; c <= 1000 - a - b; c++)
-                    {
                         if (a * a + b* b == c * c)
-                        {
-                            if (pDict.ContainsKey(a+b+c)) 
-                                pDict[a+b+c] = pDict[a+b+c] + 1;
-                            else 
-                                pDict[a+b+c] = 1;
-                        }
-                    }
-                }
-            }
+                            pDict[a+b+c] = (pDict.ContainsKey(a+b+c))  ? (pDict[a+b+c] + 1) : 1;
 
             int maxCount = 0;
             int maxCountP = 0;
             foreach (int key in pDict.Keys)
-            {
                 if (pDict[key] > maxCount)
                 {
                     maxCount = pDict[key];
                     maxCountP = key;
                 }
-            }
 
             return maxCountP.ToString();
         }
