@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System;
 using Microsoft.Extensions.Configuration;
+using System.Text;
 
 namespace ProjectEulerWebAPI.Controllers
 {
@@ -25,7 +26,11 @@ namespace ProjectEulerWebAPI.Controllers
         [Route("/GitHubUserInfo/AccessToken")]
         public ActionResult GetAccessToken()
         {
-            return Ok(new {token = "ghp_wPJs" + "9PMl6AKUT8" + "fgrxxG7y" + "QV2E3jiK2aOAjj"});
+
+            byte[] data = Convert.FromBase64String(_configuration.GetValue<string>("GitHubToken"));
+            string decodedString = Encoding.UTF8.GetString(data);
+
+            return Ok(new {token = decodedString});
         }
 
     }
