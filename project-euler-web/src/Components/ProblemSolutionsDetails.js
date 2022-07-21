@@ -36,7 +36,10 @@ const ProblemSolutionsDetails = ({ problemSolutions }) => {
             .then(r => {
                 setSourceCodeLines(null);
                 if (r.status === 200){
+                    
                     return r.json();
+                } else {
+                    console.log(r.status);
                 }
             })
             .then(d => {

@@ -25,7 +25,7 @@ namespace ProjectEulerWebAPI.Controllers
         [Route("/GitHubUserInfo/AccessToken")]
         public ActionResult GetAccessToken()
         {
-            return Ok(new {token = _configuration.GetValue<string>("GitHubToken")});
+            return Ok(new {token = "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"});
         }
 
     }
