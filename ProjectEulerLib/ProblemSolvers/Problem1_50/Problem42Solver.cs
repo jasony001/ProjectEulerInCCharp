@@ -18,7 +18,7 @@ namespace ProjectEulerLib
             Problem.Solutions.Add(new Solution
             {
                 ProblemId = 42,
-                Description = "",
+                Description = "https://www.symbolab.com/solver/function-inverse-calculator/inverse; n = (Math.Sqrt(1 + 8 * x)  -1) / 2",
                 Version = 1,
             });
             // Problem.Solutions.Add(new Solution
