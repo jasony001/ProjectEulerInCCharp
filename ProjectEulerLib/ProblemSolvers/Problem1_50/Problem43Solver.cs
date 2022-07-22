@@ -49,56 +49,43 @@ Find the sum of all 0 to 9 pandigital numbers with this property.";
         }
 
         public override string solution1()
-        {
-            List<long> subStringDivisibleNumbers = new List<long>();
-            for(int i = 1; i <= 58; i ++)
             {
-                int i17 = 17 * i;
-                if (i17== 289 )
+                List<long> subStringDivisibleNumbers = new List<long>();
+                for(int i17 = 17; i17 < 1000; i17 += 17)
                 {
-                    int x = 1;
-                }                            
-                List<int> list13 = TestNUmber(i17, 7);
-                foreach(int i13 in list13)
-                {
-                    List<int> list11 = TestNUmber(i13, 6 );
-                    foreach(int i11 in list11)
+                    List<int> list13 = FindPreviousDigit(i17, 7);
+                    foreach(int i13 in list13)
                     {
-                        List<int> list7 = TestNUmber(i11, 5);
-                        foreach(int i7 in list7)
+                        List<int> list11 = FindPreviousDigit(i13, 6 );
+                        foreach(int i11 in list11)
                         {
-                            List<int> list5 = TestNUmber(i7, 4);
-                            foreach(int i5 in list5)
+                            List<int> list7 = FindPreviousDigit(i11, 5);
+                            foreach(int i7 in list7)
                             {
-                                List<int> list3 = TestNUmber(i5, 3);
-                                foreach(int i3 in list3)
+                                List<int> list5 = FindPreviousDigit(i7, 4);
+                                foreach(int i5 in list5)
                                 {
-
-                                    List<int> list2 = TestNUmber(i3, 2);
-                                    foreach(int i2 in list2)
+                                    List<int> list3 = FindPreviousDigit(i5, 3);
+                                    foreach(int i3 in list3)
                                     {
-
-                                        for (int i1 = 1; i1 <=9; i1 ++)
+                                        List<int> list2 = FindPreviousDigit(i3, 2);
+                                        foreach(int i2 in list2)
                                         {
-                                            long divisibleNumber = i17;
-                                            long powerOf10 = 1000;
-                                            divisibleNumber += i13 / 100 * powerOf10;
-                                            powerOf10 *= 10;
-                                            divisibleNumber += i11 / 100 * powerOf10;
-                                            powerOf10 *= 10;
-                                            divisibleNumber += i7 / 100 * powerOf10;
-                                            powerOf10 *= 10;
-                                            divisibleNumber += i5 / 100 * powerOf10;
-                                            powerOf10 *= 10;
-                                            divisibleNumber += i3 / 100 * powerOf10;
-                                            powerOf10 *= 10;
-                                            divisibleNumber += i2 / 100 * powerOf10;
-                                            powerOf10 *= 10;
-                                            divisibleNumber += i1 * powerOf10;
-                                            powerOf10 *= 10;
-                                            if (Is0to9PandigitalNumber(divisibleNumber))
+                                            for (int i1 = 100; i1 <=900; i1 +=100)
                                             {
-                                                subStringDivisibleNumbers.Add(divisibleNumber);
+                                                long divisibleNumber = i17;
+                                                long powerOf10 = 1000;
+                                                int [] digits = new int[] {i13, i11, i7, i5, i3, i2, i1};
+                                                foreach(int d in digits)
+                                                {
+                                                    divisibleNumber += d / 100 * powerOf10;
+                                                    powerOf10 *= 10;
+                                                }
+
+                                                if (IsPandigitalNumber(divisibleNumber, 10))
+                                                {
+                                                    subStringDivisibleNumbers.Add(divisibleNumber);
+                                                }
                                             }
                                         }
                                     }
@@ -107,45 +94,45 @@ Find the sum of all 0 to 9 pandigital numbers with this property.";
                         }
                     }
                 }
+
+                foreach(long n in subStringDivisibleNumbers)
+                {
+                    Console.WriteLine(n);
+                }
+
+                return subStringDivisibleNumbers.Sum(n => n).ToString();
             }
 
-            foreach(long n in subStringDivisibleNumbers)
-            {
-                Console.WriteLine(n);
-            }
-
-            return subStringDivisibleNumbers.Sum(n => n).ToString();
-        }
-
-    private bool Is0to9PandigitalNumber(long n)
-    {
-      string s = n.ToString();
-      if (s.Length != 10) return false;
-      if (s.ToArray().Distinct().Count() != 10) return false;
-
-      return true;
-    }
-
-    List<int> TestNUmber(int n, int startingDigit)
+        private bool IsPandigitalNumber(long n, int digitsCount)
         {
-            List<int> pList = new List<int>();
-            int [] primes = new int []{1, 1, 2, 3, 5, 7, 11, 13, 17};
-            if (startingDigit > 7 || startingDigit < 2) return pList;
-            int x = n/10;
-            for(int i = 0; i <= 9; i ++)
-            {
-                int p = i * 100 + x;
-                if (p % primes[startingDigit] == 0)
-                    pList.Add(p);
-            }
+            string s = n.ToString();
+            if (s.Length != digitsCount) return false;
+            if (s.ToArray().Distinct().Count() != digitsCount) return false;
 
-            return pList;
+            return true;
         }
+
+        List<int> FindPreviousDigit(int n, int startingDigit)
+            {
+                List<int> pList = new List<int>();
+                int [] primes = new int []{1, 1, 2, 3, 5, 7, 11, 13, 17};
+                if (startingDigit > 7 || startingDigit < 2) return pList;
+                int x = n/10;
+                for(int i = 0; i <= 9; i ++)
+                {
+                    int p = i * 100 + x;
+                    if (p % primes[startingDigit] == 0)
+                        pList.Add(p);
+                }
+
+                return pList;
+            }
 
         public override string solution2()
         {
             return "";
         }
+
 
         public override string solution3()
         {
