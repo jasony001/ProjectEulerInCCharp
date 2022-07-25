@@ -26,21 +26,48 @@ namespace ProjectEulerLib.MoreMath
             return (Math.Abs(value: n - (long) n) < Math.Pow(0.1, 8));
         }
 
+
+        public long ReverseTriangleNumber(long x)
+        {
+            // ignore negative numbers
+            double n = (Math.Sqrt(x * 8 + 1) - 1) / 2;
+
+            if (Math.Abs(value: n - (long) n) < Math.Pow(0.1, 8))
+            {
+                return (long)n;
+            }
+
+            return -1;
+        }
+
         public long NthTriangleNumber(long n)
         {
             return n * (n + 1) / 2;
         }
 
-        public long NthPentagonalNumber(long n)
+
+        public long GetNthPentagonNumber(long n)
         {
-            return n* (3 * n - 1) / 2;
+            return n * (3 * n - 1) / 2;
         }
 
-        public bool IsPentagonalNumber(long x)
+        public bool IsPentagonNumber(long n)
         {
-            double n = (1 + Math.Sqrt(1 + 24 * x)) / 6;
+            // ignore negative
+            double x = (1 + Math.Sqrt(1 + 24 * n)) / 6;
+            return (Math.Abs(x - (long)x)) < Math.Pow(0.1, 8);
+        }
 
-            return (Math.Abs(value: n - (long) n) < Math.Pow(0.1, 8));
+        public long ReversePentagonNumber(long n)
+        {
+            // ignore negative
+            double x = (1 + Math.Sqrt(1 + 24 * n)) / 6;
+            if ((Math.Abs(x - (long)x)) < Math.Pow(0.1, 8))
+            {
+                return (long) x;
+            }
+
+            return -1;
         }
 
         public long NthHexagonalNumber(long n)
@@ -53,6 +80,18 @@ namespace ProjectEulerLib.MoreMath
             double n = (1 + Math.Sqrt(1 + 8 * x)) / 4;
 
             return (Math.Abs(value: n - (long) n) < Math.Pow(0.1, 8));
+        }
+
+        public long ReverseHexagonalNumber(long x)
+        {
+            double n = (1 + Math.Sqrt(1 + 8 * x)) / 4;
+
+            if (Math.Abs(value: n - (long) n) < Math.Pow(0.1, 8))
+            {
+                return (long)n;
+            }
+
+            return -1;
         }
 
     }

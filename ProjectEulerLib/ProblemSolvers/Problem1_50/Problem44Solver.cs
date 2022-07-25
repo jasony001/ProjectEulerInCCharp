@@ -47,29 +47,6 @@ This solution is valid with the assumption that such pair exists. Should probabl
             // });
         }
 
-        public long GetNthPentagonNumber(long n)
-        {
-            return n * (3 * n - 1) / 2;
-        }
-
-        public bool IsPentagonNumber(long n)
-        {
-            // ignore negative
-            double x = (1 + Math.Sqrt(1 + 24 * n)) / 6;
-            return (Math.Abs(x - (long)x)) < Math.Pow(0.1, 8);
-        }
-
-        public long ReversePentagonNumber(long n)
-        {
-            // ignore negative
-            double x = (1 + Math.Sqrt(1 + 24 * n)) / 6;
-            if ((Math.Abs(x - (long)x)) < Math.Pow(0.1, 8))
-            {
-                return (long) x;
-            }
-
-            return -1;
-        }
 
         public override string solution1()
         {
@@ -81,15 +58,15 @@ This solution is valid with the assumption that such pair exists. Should probabl
             List<long> pentagonNumberList = new List<long>{0, 1};
             while(!found)
             {
-                long pi = GetNthPentagonNumber(i);
+                long pi = specialNumberCalculator.GetNthPentagonNumber(i);
                 pentagonNumberList.Add(pi);
                 for(j = 1; j < i; j ++)
                 {
                     long pj = pentagonNumberList[j];
-                    if (IsPentagonNumber(pi + pj) && IsPentagonNumber(pi - pj))
+                    if (specialNumberCalculator.IsPentagonNumber(pi + pj) && specialNumberCalculator.IsPentagonNumber(pi - pj))
                     {
-                        long reversePIPlusPJ = ReversePentagonNumber(pi + pj);
-                        long reversePIMinusPJ = ReversePentagonNumber(pi - pj);
+                        long reversePIPlusPJ = specialNumberCalculator.ReversePentagonNumber(pi + pj);
+                        long reversePIMinusPJ = specialNumberCalculator.ReversePentagonNumber(pi - pj);
                         string answer = $"i = {i}, j = {j}, pi = {pi}, pj = {pj}, pi + pj = {pi + pj} = p(${reversePIPlusPJ}), pi - pj = {pi - pj} = p(${reversePIMinusPJ})";
                         return (pi - pj).ToString() + " : " + answer;
                     }
