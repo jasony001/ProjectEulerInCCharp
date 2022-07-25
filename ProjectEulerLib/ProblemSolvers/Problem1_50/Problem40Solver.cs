@@ -12,13 +12,22 @@ namespace ProjectEulerLib
             Problem.Id = 40;
             Problem.UpperBound = 20;
             Problem.IsClosedOnRight = true;
-            Problem.Title = "";
-            Problem.Description = "";
+            Problem.Title = "Champernowne's constant";
+            Problem.Description = 
+@"An irrational decimal fraction is created by concatenating the positive integers:
+
+0.123456789101112131415161718192021...
+
+It can be seen that the 12th digit of the fractional part is 1.
+
+If dn represents the nth digit of the fractional part, find the value of the following expression.
+
+d1 × d10 × d100 × d1000 × d10000 × d100000 × d1000000";
 
             Problem.Solutions.Add(new Solution
             {
                 ProblemId = 40,
-                Description = "easier to count by paper. will start over when head is clear",
+                Description = "It's easier (not easy either) to solve this by paper. ",
                 Version = 1,
             });
             // Problem.Solutions.Add(new Solution
@@ -37,73 +46,43 @@ namespace ProjectEulerLib
 
         public override string solution1()
         {
-            
-            List<long> nDigitsNumberCount = new List<long>{0};
-            List<long> totalNumberEqualsAndUnderNDigits = new List<long>{0};
-            List<long> firstNDigitsNumbers = new List<long>(){0};
-            long powerOf10 = 1;
-            long total = 0;
-            for(int i = 1; i <= 7; i ++) 
+            long product = 1;
+            // d1 and d10 are 1, ignore
+            for(int digit = 3; digit <= 7; digit ++)
             {
-                firstNDigitsNumbers.Add(powerOf10);
-                nDigitsNumberCount.Add(i * 9 * powerOf10);
-                total += nDigitsNumberCount[i];
-                totalNumberEqualsAndUnderNDigits.Add(total);
-                powerOf10 *= 10;
-            }
-firstNDigitsNumbers[1] = 0;
-            long answer = 1;
-            powerOf10 = 1;
-            for(int i = 1; i <= 7; i ++) 
-            {
-                long position = powerOf10;
-                long countedNumbers = 0;
-                
-                int t = 1;
-                while(position > countedNumbers + nDigitsNumberCount[t - 1])
-                {
-                    countedNumbers += nDigitsNumberCount[t - 1];
-                    t++;
-                }
-
-                long leftToCount = position - countedNumbers;
-                long wholeNumber = firstNDigitsNumbers[i] + leftToCount / (t - 1);
-                long remainder = leftToCount % (t - 1);
-                int d = 0;
-                if (remainder == 0)
-                {
-                    d = wholeNumber.ToString()[wholeNumber.ToString().Length - 1] - '0';
-                }
-                else
-                {
-                    d = (wholeNumber+1).ToString()[(int)remainder - 1] - '0';
-                }
-
-                powerOf10 *= 10;
-                answer *= d;
+                int nthDigit  = GetNthNumber(digit);
+                product *= nthDigit;
             }
 
-            return answer.ToString();
+            return product.ToString();
         }
 
-        // public override string solution2()
-        // {
-        //     string s = "";
-        //     int i = 1;
-        //     while(s.Length < 1000000)
-        //     {
-        //         s = s + i.ToString();
-        //         i ++;
-        //     }
+        int GetNthNumber(int digit)
+        {
+            long [] firstXDigitsNumber = new long [] {0, 1, 10, 100, 1000, 10000, 100000, 1000000};
+            long [] xDigitsNumberCount = new long [] {0, 9, 180, 2700, 36000, 450000, 5400000};
+            long [] countOfNumbersNoGreaterThanXDigits = new long [] {0, 9, 189, 2889, 38889, 488889, 5888889};
 
-        //     long prd = (s[0] - '0') * 
-        //         (s[9] - '0') * 
-        //         (s[99] - '0') * 
-        //         (s[999] - '0') * 
-        //         (s[9999] - '0') * 
-        //         (s[99999] - '0');
-        //     return prd.ToString();
-        // }
+            long countedNumbers = countOfNumbersNoGreaterThanXDigits[digit - 2];
+            long position = (long)Math.Pow(10, digit - 1);
+            long leftToCount = position - countedNumbers;
+            long wholeNumber = firstXDigitsNumber[digit - 1] + leftToCount / (digit - 1) - 1;
+            int remainder = (int)(leftToCount % (digit - 1));
+
+            if (remainder == 0)
+            {
+                return (int)(wholeNumber.ToString()[digit - 2] - '0');
+            }
+            else
+            {
+                return (int)((wholeNumber + 1).ToString()[remainder - 1] - '0');
+            }
+        }
+
+        public override string solution2()
+        {
+            return "";
+        }
 
         public override string solution3()
         {
