@@ -59,14 +59,14 @@ d1 × d10 × d100 × d1000 × d10000 × d100000 × d1000000";
 
         int GetNthNumber(int digit)
         {
-            long [] firXDigitsNumber = new long [] {0, 1, 10, 100, 1000, 10000, 100000, 1000000};
+            long [] firstXDigitsNumber = new long [] {0, 1, 10, 100, 1000, 10000, 100000, 1000000};
             long [] xDigitsNumberCount = new long [] {0, 9, 180, 2700, 36000, 450000, 5400000};
             long [] countOfNumbersNoGreaterThanXDigits = new long [] {0, 9, 189, 2889, 38889, 488889, 5888889};
 
             long countedNumbers = countOfNumbersNoGreaterThanXDigits[digit - 2];
             long position = (long)Math.Pow(10, digit - 1);
             long leftToCount = position - countedNumbers;
-            long wholeNumber = firXDigitsNumber[digit - 1] + leftToCount / (digit - 1) - 1;
+            long wholeNumber = firstXDigitsNumber[digit - 1] + leftToCount / (digit - 1) - 1;
             int remainder = (int)(leftToCount % (digit - 1));
 
             if (remainder == 0)
