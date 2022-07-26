@@ -10,7 +10,7 @@ namespace ProjectEulerLib
         public Problem50Solver() : base()
         {
             Problem.Id = 50;
-            Problem.UpperBound = 20;
+            Problem.UpperBound = 100;
             Problem.IsClosedOnRight = true;
             Problem.Title = "Consecutive prime sum";
             Problem.Description = 
@@ -26,7 +26,7 @@ Which prime, below one-million, can be written as the sum of the most consecutiv
             Problem.Solutions.Add(new Solution
             {
                 ProblemId = 50,
-                Description = "Look for [rayfil]'s solution in the thread. Brilliant.",
+                Description = "Look for [rayfil]'s solution in the thread. Brilliant. Though I don't understand the part 'stop when the sum would exceed 1,000,000.'",
                 Version = 1,
             });
             // Problem.Solutions.Add(new Solution
@@ -46,12 +46,12 @@ Which prime, below one-million, can be written as the sum of the most consecutiv
         public override string solution1()
         {
             MoreMath.PrimeCalculator primeCalculator = new MoreMath.PrimeCalculator();
-            bool [] primeFlags = primeCalculator.GetPrimeFlagArray(1000000);
+            bool [] primeFlags = primeCalculator.GetPrimeFlagArray(Problem.CalculatedIncludedUpperBound);
             List<long> primes = new List<long>();
             long sum = 0;
-            for(int i = 0; i < 1000000; i ++)
+            for(int i = 0; i < Problem.CalculatedIncludedUpperBound; i ++)
                 if (primeFlags[i]) {
-                    if (sum + i > 1000000) break;
+                    if (sum + i > Problem.CalculatedIncludedUpperBound) break;
                     
                     primes.Add(i);
                     sum += i;
@@ -66,9 +66,10 @@ Which prime, below one-million, can be written as the sum of the most consecutiv
                     int H = removeCount - L;
 
                     for(int i = 0; i < L; i ++) total -= primes[i];
-                    for(int i = 0; i < H; i ++) total -= primes[primes.Count - 1 - H];
+                    for(int i = 0; i < H; i ++) total -= primes[primes.Count - 1 - i];
 
-                    if (primeFlags[total]) return total.ToString();
+                    if (primeFlags[total]) 
+                        return total.ToString();
                 }
             }
             
