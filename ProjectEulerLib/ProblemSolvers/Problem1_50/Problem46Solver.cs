@@ -46,8 +46,8 @@ namespace ProjectEulerLib
             }
 
             long n = 1;
-            bool found = false;
-            while(!found)
+
+            while(true)
             {
                  n += 2;
                  if (primeFlags[n]) continue;
@@ -56,17 +56,14 @@ namespace ProjectEulerLib
                  bool goldbach = false;
                  foreach(long pc in primeCandidates)
                  {
-                    
                     double d = Math.Sqrt((n - pc) / 2);
                     if (Math.Abs(d - (long)d) < Math.Pow(0.1, 9))
                         goldbach = true;
                  }
+
                  if (!goldbach)
                     return n.ToString();
             }
-
-
-            return "";
         }
 
         public override string solution2()
