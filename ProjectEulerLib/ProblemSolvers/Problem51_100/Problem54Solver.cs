@@ -38,6 +38,75 @@ How many hands does Player 1 win?";
             // });
         }
 
+        public override string solution1()
+        {
+            int count = 0;
+            System.IO.StreamReader sr = new System.IO.StreamReader("p054_poker.txt");
+            string line = "";
+            while((line = sr.ReadLine()) != null)
+            {
+                count += CompareHands(line);
+            }
+
+            sr.Close();
+
+            return count.ToString();
+        }
+
+        int CompareHands(string line)
+        {
+            string [] cards = line.Split(new char[]{' '}, StringSplitOptions.RemoveEmptyEntries);
+            if (cards.Length != 10) throw new Exception ("Invalid line: " + line);
+
+            int  [] handANumbers = new int[5];
+            char [] handAColors  = new char[5];
+            int  [] handBNumbers = new int[5];
+            char [] handBColors  = new char[5];
+
+            for(int i = 0; i < 5; i ++)
+            {
+                handANumbers[i] = CardNumber(cards[i][0]);
+                handAColors[i] = cards[i][1];
+
+                handBNumbers[i] = CardNumber(cards[i + 5][0]);
+                handBColors[i] = cards[i + 5][1];
+            }
+
+            long handAValue = CalculateHandValue(handANumbers, handAColors, line);
+            long handBValue = CalculateHandValue(handBNumbers, handBColors, line);
+
+            return handAValue > handBValue ? 1 : 0;
+        }
+
+        int CardNumber(char c)
+        {
+            c = c.ToString().ToUpper()[0];
+            int n = -1;
+            switch (c)
+            {
+                case 'A':
+                    n = 14;
+                    break;
+                case 'K':
+                    n = 13;
+                    break;
+                case 'Q':
+                    n = 12;
+                    break;
+                case 'J':
+                    n = 11;
+                    break;
+                case 'T':
+                    n = 10;
+                    break;
+                default:
+                    n = c - '0';
+                    break;
+            }
+
+            return n;
+        }
+
         long CalculateHandValue(int [] numbers, char[] colors, string line)
         {
             if (numbers.Length != 5 || colors.Length != 5) throw new Exception("Invalid hand");
@@ -62,11 +131,11 @@ How many hands does Player 1 win?";
 
         void SortCards(int []numbers, char [] colors)
         {
+            // bubble - continue bubbling until there is no swap in one go
+            // sort by number, then by color H > S > D > C
             int [] cardValues = new int[5];
             for(int i = 0; i < 5; i ++)
-            {
                 cardValues[i] = numbers[i] * 10 + "CDSH".IndexOf(colors[i]);
-            }
 
             if (cardValues.Distinct().Count() < 5) throw new Exception("Invalid hand");
 
@@ -78,6 +147,7 @@ How many hands does Player 1 win?";
                 {
                     if (cardValues[i] < cardValues[i+1] || (cardValues[i] == cardValues[i+1] && "CDSH".IndexOf(colors[i]) < "CDSH".IndexOf(colors[i + 1])))
                     {
+                        // swapping happen in all three arrays
                         int x = cardValues[i]; cardValues[i] = cardValues[i + 1];cardValues[i + 1] = x;
                         x = numbers[i]; numbers[i] = numbers[i + 1]; numbers[i + 1] = x;
                         char c = colors[i]; colors[i] = colors[i + 1]; colors[i + 1] = c;
@@ -133,12 +203,9 @@ How many hands does Player 1 win?";
 
                     break;
                 }
-
-
-
             }
 
-            if (pairNumbers[0] == 0) return 0;
+            if (pairNumbers[0] == 0) return -1;
 
             int colorValue = "CDSH".IndexOf(colors[0]);
             long handValue = pairNumbers[0] * 1100000 + singleCardNumbers[0] * 700 + singleCardNumbers[1] * 50 + singleCardNumbers[2] * 4 + colorValue;
@@ -189,6 +256,7 @@ How many hands does Player 1 win?";
             }
 
             if (pairsNumbers.Length != 4 || pairsColors.Length != 4 || pairsNumbers[0] != pairsNumbers[1] || pairsNumbers[2] != pairsNumbers[3]) return -1; // not a two pair
+
             int colorValue = "CDSH".IndexOf(pairsColors[0]);
             long handValue = pairsNumbers[0] * 16000000 + pairsNumbers[2] * 1200000 + singleCardNumber * 4 + colorValue;
 
@@ -210,7 +278,9 @@ How many hands does Player 1 win?";
 
             if(n < 0) return -1;
 
-            return n * 240000000;
+            long handValue = n * 240000000;
+
+            return handValue;
         }
 
         long Straight(int[] numbers, char[] colors, string line)
@@ -223,7 +293,8 @@ How many hands does Player 1 win?";
                 if (numbers[i] != numbers[i + 1] + 1) return -1;
             }
 
-            return numbers[0] * 4000000000 + "CDSH".IndexOf(colors[0]);
+            long handValue = numbers[0] * 4000000000 + "CDSH".IndexOf(colors[0]);
+            return handValue;
         }
 
         long Flush(int[] numbers, char[] colors, string line)
@@ -273,6 +344,7 @@ How many hands does Player 1 win?";
                 if (isFourOfAKind) n = numbers[i];
             }
             if(n < 0) return -1;
+
             long handValue = n * 900000000000;
 
             return handValue;
@@ -313,77 +385,6 @@ How many hands does Player 1 win?";
             
             return handValue;
         }        
-
-        public override string solution1()
-        {
-            int count = 0;
-            System.IO.StreamReader sr = new System.IO.StreamReader("p054_poker.txt");
-            string line = "";
-            while((line = sr.ReadLine()) != null)
-            {
-                count += CompareHands(line);
-            }
-
-            sr.Close();
-
-            return count.ToString();
-        }
-
-        int CompareHands(string line)
-        {
-            string [] cards = line.Split(new char[]{' '}, StringSplitOptions.RemoveEmptyEntries);
-            if (cards.Length != 10) throw new Exception ("Invalid line: " + line);
-
-            int  [] handANumbers = new int[5];
-            char [] handAColors  = new char[5];
-            int  [] handBNumbers = new int[5];
-            char [] handBColors  = new char[5];
-
-            for(int i = 0; i < 5; i ++)
-            {
-                handANumbers[i] = CardNumber(cards[i][0]);
-                handAColors[i] = cards[i][1];
-
-                handBNumbers[i] = CardNumber(cards[i + 5][0]);
-                handBColors[i] = cards[i + 5][1];
-            }
-
-            long handAValue = CalculateHandValue(handANumbers, handAColors, line);
-            long handBValue = CalculateHandValue(handBNumbers, handBColors, line);
-
-            if (Math.Abs(handAValue - handBValue) < 10000) Console.WriteLine($"{line} {handAValue} {handBValue}");
-
-            return handAValue > handBValue ? 1 : 0;
-        }
-
-        int CardNumber(char c)
-        {
-            c = c.ToString().ToUpper()[0];
-            int n = -1;
-            switch (c)
-            {
-                case 'A':
-                    n = 14;
-                    break;
-                case 'K':
-                    n = 13;
-                    break;
-                case 'Q':
-                    n = 12;
-                    break;
-                case 'J':
-                    n = 11;
-                    break;
-                case 'T':
-                    n = 10;
-                    break;
-                default:
-                    n = c - '0';
-                    break;
-            }
-
-            return n;
-        }
 
         public override string solution2()
         {
