@@ -25,7 +25,7 @@ Considering natural numbers of the form, ab, where a, b < 100, what is the maxim
 @"
 use a List<int> to represent each a (1 - 100), repeat multiply this by a 100 times, carry digits in the product, sum the digits in the list of the product
 didn't understand how to work out the constraints
-but using List<int> to represent the number makes it very fast
+but using List<int> to represent the number makes it very fast - 22 ms
 ",
                 Version = 1,
             });
