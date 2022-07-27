@@ -37,6 +37,7 @@ namespace ProjectEulerLib
 
         public override string solution1()
         {
+            
             return "";
         }
 
