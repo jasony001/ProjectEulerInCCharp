@@ -10,7 +10,7 @@ namespace ProjectEulerLib
     public class Problem13Solver : ProblemSolver
     {
 
-        List<string> bigNumberList = new List<string>{
+        List<string> BigIntegerList = new List<string>{
             "37107287533902102798797998220837590246510135740250",
 "46376937677490009712648124896970078050417018260538",
 "74324986199524741059474233309513058123726617309629",
@@ -120,9 +120,9 @@ namespace ProjectEulerLib
             Problem.Description =
                 "Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.\n"
                     + "\n";
-            foreach (string bigNumber in bigNumberList)
+            foreach (string BigInteger in BigIntegerList)
             {
-                Problem.Description = Problem.Description + bigNumber + "\n";
+                Problem.Description = Problem.Description + BigInteger + "\n";
             }
 
             Problem.Solutions.Add(new Solution
@@ -134,7 +134,7 @@ namespace ProjectEulerLib
             Problem.Solutions.Add(new Solution
             {
                 ProblemId = 13,
-                Description = "Custom BigNumber class",
+                Description = "Custom BigInteger class",
                 Version = 2,
             });
         }
@@ -146,7 +146,7 @@ namespace ProjectEulerLib
             {
                 for (int j = 0; j < 100; j++)
                 {
-                    carryOver += ((bigNumberList[j][49 - i] - '0'));
+                    carryOver += ((BigIntegerList[j][49 - i] - '0'));
                 }
                 carryOver /= 10;
             }
@@ -154,7 +154,7 @@ namespace ProjectEulerLib
             long sum = carryOver;
             for (int j = 0; j < 100; j++)
             {
-                long big10DigitNumber = Convert.ToInt64(bigNumberList[j].Substring(0, 9));
+                long big10DigitNumber = Convert.ToInt64(BigIntegerList[j].Substring(0, 9));
                 sum += big10DigitNumber;
             }
 
@@ -163,19 +163,20 @@ namespace ProjectEulerLib
 
         public override string solution2()
         {
-            BigNumber b1 = new BigNumber(67);
-            BigNumber b2 = new BigNumber(76);
-            BigNumber a = b1 + b2;  
+            // BigInteger b1 = new BigInteger(67);
+            // BigInteger b2 = new BigInteger(76);
+            // BigInteger a = b1 + b2;  
 
-            BigNumber sum = new BigNumber(0);
+            // BigInteger sum = new BigInteger(0);
 
-            for(int i = 0; i < 100; i ++)
-            {
-                BigNumber b = new BigNumber(bigNumberList[i]);
-                sum = sum + b;
-            }
+            // for(int i = 0; i < 100; i ++)
+            // {
+            //     BigInteger b = new BigInteger(BigIntegerList[i]);
+            //     sum = sum + b;
+            // }
 
-            return sum.ToString().Substring(0, 10);
+            // return sum.ToString().Substring(0, 10);
+            return "";
         }
     }
 }

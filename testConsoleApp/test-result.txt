@@ -1,0 +1,505 @@
+passed: Test BigInteger.Max(BigInteger(-9223372036854775808), BigInteger(-9223372036854775808)). Expected: -9223372036854775808
+passed: Test BigInteger.Max(BigInteger(-9223372036854775808), -9223372036854775808). Expected: -9223372036854775808
+passed: Test BigInteger.Max(-9223372036854775808, BigInteger(-9223372036854775808)). Expected: -9223372036854775808
+passed: Test BigInteger.Min(BigInteger(-9223372036854775808), BigInteger(-9223372036854775808)). Expected: -9223372036854775808
+passed: Test BigInteger.Min(BigInteger(-9223372036854775808), -9223372036854775808). Expected: -9223372036854775808
+passed: Test BigInteger.Min(-9223372036854775808, BigInteger(-9223372036854775808)). Expected: -9223372036854775808
+
+passed: Test BigInteger.Max(BigInteger(-9223372036854775808), BigInteger(-2354)). Expected: -2354
+passed: Test BigInteger.Max(BigInteger(-9223372036854775808), -2354). Expected: -2354
+passed: Test BigInteger.Max(-9223372036854775808, BigInteger(-2354)). Expected: -2354
+passed: Test BigInteger.Min(BigInteger(-9223372036854775808), BigInteger(-2354)). Expected: -9223372036854775808
+passed: Test BigInteger.Min(BigInteger(-9223372036854775808), -2354). Expected: -9223372036854775808
+passed: Test BigInteger.Min(-9223372036854775808, BigInteger(-2354)). Expected: -9223372036854775808
+
+passed: Test BigInteger.Max(BigInteger(-9223372036854775808), BigInteger(-2016)). Expected: -2016
+passed: Test BigInteger.Max(BigInteger(-9223372036854775808), -2016). Expected: -2016
+passed: Test BigInteger.Max(-9223372036854775808, BigInteger(-2016)). Expected: -2016
+passed: Test BigInteger.Min(BigInteger(-9223372036854775808), BigInteger(-2016)). Expected: -9223372036854775808
+passed: Test BigInteger.Min(BigInteger(-9223372036854775808), -2016). Expected: -9223372036854775808
+passed: Test BigInteger.Min(-9223372036854775808, BigInteger(-2016)). Expected: -9223372036854775808
+
+passed: Test BigInteger.Max(BigInteger(-9223372036854775808), BigInteger(-387)). Expected: -387
+passed: Test BigInteger.Max(BigInteger(-9223372036854775808), -387). Expected: -387
+passed: Test BigInteger.Max(-9223372036854775808, BigInteger(-387)). Expected: -387
+passed: Test BigInteger.Min(BigInteger(-9223372036854775808), BigInteger(-387)). Expected: -9223372036854775808
+passed: Test BigInteger.Min(BigInteger(-9223372036854775808), -387). Expected: -9223372036854775808
+passed: Test BigInteger.Min(-9223372036854775808, BigInteger(-387)). Expected: -9223372036854775808
+
+passed: Test BigInteger.Max(BigInteger(-9223372036854775808), BigInteger(0)). Expected: 0
+passed: Test BigInteger.Max(BigInteger(-9223372036854775808), 0). Expected: 0
+passed: Test BigInteger.Max(-9223372036854775808, BigInteger(0)). Expected: 0
+passed: Test BigInteger.Min(BigInteger(-9223372036854775808), BigInteger(0)). Expected: -9223372036854775808
+passed: Test BigInteger.Min(BigInteger(-9223372036854775808), 0). Expected: -9223372036854775808
+passed: Test BigInteger.Min(-9223372036854775808, BigInteger(0)). Expected: -9223372036854775808
+
+passed: Test BigInteger.Max(BigInteger(-9223372036854775808), BigInteger(293)). Expected: 293
+passed: Test BigInteger.Max(BigInteger(-9223372036854775808), 293). Expected: 293
+passed: Test BigInteger.Max(-9223372036854775808, BigInteger(293)). Expected: 293
+passed: Test BigInteger.Min(BigInteger(-9223372036854775808), BigInteger(293)). Expected: -9223372036854775808
+passed: Test BigInteger.Min(BigInteger(-9223372036854775808), 293). Expected: -9223372036854775808
+passed: Test BigInteger.Min(-9223372036854775808, BigInteger(293)). Expected: -9223372036854775808
+
+passed: Test BigInteger.Max(BigInteger(-9223372036854775808), BigInteger(387)). Expected: 387
+passed: Test BigInteger.Max(BigInteger(-9223372036854775808), 387). Expected: 387
+passed: Test BigInteger.Max(-9223372036854775808, BigInteger(387)). Expected: 387
+passed: Test BigInteger.Min(BigInteger(-9223372036854775808), BigInteger(387)). Expected: -9223372036854775808
+passed: Test BigInteger.Min(BigInteger(-9223372036854775808), 387). Expected: -9223372036854775808
+passed: Test BigInteger.Min(-9223372036854775808, BigInteger(387)). Expected: -9223372036854775808
+
+passed: Test BigInteger.Max(BigInteger(-9223372036854775808), BigInteger(2016)). Expected: 2016
+passed: Test BigInteger.Max(BigInteger(-9223372036854775808), 2016). Expected: 2016
+passed: Test BigInteger.Max(-9223372036854775808, BigInteger(2016)). Expected: 2016
+passed: Test BigInteger.Min(BigInteger(-9223372036854775808), BigInteger(2016)). Expected: -9223372036854775808
+passed: Test BigInteger.Min(BigInteger(-9223372036854775808), 2016). Expected: -9223372036854775808
+passed: Test BigInteger.Min(-9223372036854775808, BigInteger(2016)). Expected: -9223372036854775808
+
+passed: Test BigInteger.Max(BigInteger(-9223372036854775808), BigInteger(9223372036854775807)). Expected: 9223372036854775807
+passed: Test BigInteger.Max(BigInteger(-9223372036854775808), 9223372036854775807). Expected: 9223372036854775807
+passed: Test BigInteger.Max(-9223372036854775808, BigInteger(9223372036854775807)). Expected: 9223372036854775807
+passed: Test BigInteger.Min(BigInteger(-9223372036854775808), BigInteger(9223372036854775807)). Expected: -9223372036854775808
+passed: Test BigInteger.Min(BigInteger(-9223372036854775808), 9223372036854775807). Expected: -9223372036854775808
+passed: Test BigInteger.Min(-9223372036854775808, BigInteger(9223372036854775807)). Expected: -9223372036854775808
+
+passed: Test BigInteger.Max(BigInteger(-254), BigInteger(-9223372036854775808)). Expected: -254
+passed: Test BigInteger.Max(BigInteger(-254), -9223372036854775808). Expected: -254
+passed: Test BigInteger.Max(-254, BigInteger(-9223372036854775808)). Expected: -254
+passed: Test BigInteger.Min(BigInteger(-254), BigInteger(-9223372036854775808)). Expected: -9223372036854775808
+passed: Test BigInteger.Min(BigInteger(-254), -9223372036854775808). Expected: -9223372036854775808
+passed: Test BigInteger.Min(-254, BigInteger(-9223372036854775808)). Expected: -9223372036854775808
+
+passed: Test BigInteger.Max(BigInteger(-254), BigInteger(-2354)). Expected: -254
+passed: Test BigInteger.Max(BigInteger(-254), -2354). Expected: -254
+passed: Test BigInteger.Max(-254, BigInteger(-2354)). Expected: -254
+passed: Test BigInteger.Min(BigInteger(-254), BigInteger(-2354)). Expected: -2354
+passed: Test BigInteger.Min(BigInteger(-254), -2354). Expected: -2354
+passed: Test BigInteger.Min(-254, BigInteger(-2354)). Expected: -2354
+
+passed: Test BigInteger.Max(BigInteger(-254), BigInteger(-2016)). Expected: -254
+passed: Test BigInteger.Max(BigInteger(-254), -2016). Expected: -254
+passed: Test BigInteger.Max(-254, BigInteger(-2016)). Expected: -254
+passed: Test BigInteger.Min(BigInteger(-254), BigInteger(-2016)). Expected: -2016
+passed: Test BigInteger.Min(BigInteger(-254), -2016). Expected: -2016
+passed: Test BigInteger.Min(-254, BigInteger(-2016)). Expected: -2016
+
+passed: Test BigInteger.Max(BigInteger(-254), BigInteger(-387)). Expected: -254
+passed: Test BigInteger.Max(BigInteger(-254), -387). Expected: -254
+passed: Test BigInteger.Max(-254, BigInteger(-387)). Expected: -254
+passed: Test BigInteger.Min(BigInteger(-254), BigInteger(-387)). Expected: -387
+passed: Test BigInteger.Min(BigInteger(-254), -387). Expected: -387
+passed: Test BigInteger.Min(-254, BigInteger(-387)). Expected: -387
+
+passed: Test BigInteger.Max(BigInteger(-254), BigInteger(0)). Expected: 0
+passed: Test BigInteger.Max(BigInteger(-254), 0). Expected: 0
+passed: Test BigInteger.Max(-254, BigInteger(0)). Expected: 0
+passed: Test BigInteger.Min(BigInteger(-254), BigInteger(0)). Expected: -254
+passed: Test BigInteger.Min(BigInteger(-254), 0). Expected: -254
+passed: Test BigInteger.Min(-254, BigInteger(0)). Expected: -254
+
+passed: Test BigInteger.Max(BigInteger(-254), BigInteger(293)). Expected: 293
+passed: Test BigInteger.Max(BigInteger(-254), 293). Expected: 293
+passed: Test BigInteger.Max(-254, BigInteger(293)). Expected: 293
+passed: Test BigInteger.Min(BigInteger(-254), BigInteger(293)). Expected: -254
+passed: Test BigInteger.Min(BigInteger(-254), 293). Expected: -254
+passed: Test BigInteger.Min(-254, BigInteger(293)). Expected: -254
+
+passed: Test BigInteger.Max(BigInteger(-254), BigInteger(387)). Expected: 387
+passed: Test BigInteger.Max(BigInteger(-254), 387). Expected: 387
+passed: Test BigInteger.Max(-254, BigInteger(387)). Expected: 387
+passed: Test BigInteger.Min(BigInteger(-254), BigInteger(387)). Expected: -254
+passed: Test BigInteger.Min(BigInteger(-254), 387). Expected: -254
+passed: Test BigInteger.Min(-254, BigInteger(387)). Expected: -254
+
+passed: Test BigInteger.Max(BigInteger(-254), BigInteger(2016)). Expected: 2016
+passed: Test BigInteger.Max(BigInteger(-254), 2016). Expected: 2016
+passed: Test BigInteger.Max(-254, BigInteger(2016)). Expected: 2016
+passed: Test BigInteger.Min(BigInteger(-254), BigInteger(2016)). Expected: -254
+passed: Test BigInteger.Min(BigInteger(-254), 2016). Expected: -254
+passed: Test BigInteger.Min(-254, BigInteger(2016)). Expected: -254
+
+passed: Test BigInteger.Max(BigInteger(-254), BigInteger(9223372036854775807)). Expected: 9223372036854775807
+passed: Test BigInteger.Max(BigInteger(-254), 9223372036854775807). Expected: 9223372036854775807
+passed: Test BigInteger.Max(-254, BigInteger(9223372036854775807)). Expected: 9223372036854775807
+passed: Test BigInteger.Min(BigInteger(-254), BigInteger(9223372036854775807)). Expected: -254
+passed: Test BigInteger.Min(BigInteger(-254), 9223372036854775807). Expected: -254
+passed: Test BigInteger.Min(-254, BigInteger(9223372036854775807)). Expected: -254
+
+passed: Test BigInteger.Max(BigInteger(-2016), BigInteger(-9223372036854775808)). Expected: -2016
+passed: Test BigInteger.Max(BigInteger(-2016), -9223372036854775808). Expected: -2016
+passed: Test BigInteger.Max(-2016, BigInteger(-9223372036854775808)). Expected: -2016
+passed: Test BigInteger.Min(BigInteger(-2016), BigInteger(-9223372036854775808)). Expected: -9223372036854775808
+passed: Test BigInteger.Min(BigInteger(-2016), -9223372036854775808). Expected: -9223372036854775808
+passed: Test BigInteger.Min(-2016, BigInteger(-9223372036854775808)). Expected: -9223372036854775808
+
+passed: Test BigInteger.Max(BigInteger(-2016), BigInteger(-2354)). Expected: -2016
+passed: Test BigInteger.Max(BigInteger(-2016), -2354). Expected: -2016
+passed: Test BigInteger.Max(-2016, BigInteger(-2354)). Expected: -2016
+passed: Test BigInteger.Min(BigInteger(-2016), BigInteger(-2354)). Expected: -2354
+passed: Test BigInteger.Min(BigInteger(-2016), -2354). Expected: -2354
+passed: Test BigInteger.Min(-2016, BigInteger(-2354)). Expected: -2354
+
+passed: Test BigInteger.Max(BigInteger(-2016), BigInteger(-2016)). Expected: -2016
+passed: Test BigInteger.Max(BigInteger(-2016), -2016). Expected: -2016
+passed: Test BigInteger.Max(-2016, BigInteger(-2016)). Expected: -2016
+passed: Test BigInteger.Min(BigInteger(-2016), BigInteger(-2016)). Expected: -2016
+passed: Test BigInteger.Min(BigInteger(-2016), -2016). Expected: -2016
+passed: Test BigInteger.Min(-2016, BigInteger(-2016)). Expected: -2016
+
+passed: Test BigInteger.Max(BigInteger(-2016), BigInteger(-387)). Expected: -387
+passed: Test BigInteger.Max(BigInteger(-2016), -387). Expected: -387
+passed: Test BigInteger.Max(-2016, BigInteger(-387)). Expected: -387
+passed: Test BigInteger.Min(BigInteger(-2016), BigInteger(-387)). Expected: -2016
+passed: Test BigInteger.Min(BigInteger(-2016), -387). Expected: -2016
+passed: Test BigInteger.Min(-2016, BigInteger(-387)). Expected: -2016
+
+passed: Test BigInteger.Max(BigInteger(-2016), BigInteger(0)). Expected: 0
+passed: Test BigInteger.Max(BigInteger(-2016), 0). Expected: 0
+passed: Test BigInteger.Max(-2016, BigInteger(0)). Expected: 0
+passed: Test BigInteger.Min(BigInteger(-2016), BigInteger(0)). Expected: -2016
+passed: Test BigInteger.Min(BigInteger(-2016), 0). Expected: -2016
+passed: Test BigInteger.Min(-2016, BigInteger(0)). Expected: -2016
+
+passed: Test BigInteger.Max(BigInteger(-2016), BigInteger(293)). Expected: 293
+passed: Test BigInteger.Max(BigInteger(-2016), 293). Expected: 293
+passed: Test BigInteger.Max(-2016, BigInteger(293)). Expected: 293
+passed: Test BigInteger.Min(BigInteger(-2016), BigInteger(293)). Expected: -2016
+passed: Test BigInteger.Min(BigInteger(-2016), 293). Expected: -2016
+passed: Test BigInteger.Min(-2016, BigInteger(293)). Expected: -2016
+
+passed: Test BigInteger.Max(BigInteger(-2016), BigInteger(387)). Expected: 387
+passed: Test BigInteger.Max(BigInteger(-2016), 387). Expected: 387
+passed: Test BigInteger.Max(-2016, BigInteger(387)). Expected: 387
+passed: Test BigInteger.Min(BigInteger(-2016), BigInteger(387)). Expected: -2016
+passed: Test BigInteger.Min(BigInteger(-2016), 387). Expected: -2016
+passed: Test BigInteger.Min(-2016, BigInteger(387)). Expected: -2016
+
+passed: Test BigInteger.Max(BigInteger(-2016), BigInteger(2016)). Expected: 2016
+passed: Test BigInteger.Max(BigInteger(-2016), 2016). Expected: 2016
+passed: Test BigInteger.Max(-2016, BigInteger(2016)). Expected: 2016
+passed: Test BigInteger.Min(BigInteger(-2016), BigInteger(2016)). Expected: -2016
+passed: Test BigInteger.Min(BigInteger(-2016), 2016). Expected: -2016
+passed: Test BigInteger.Min(-2016, BigInteger(2016)). Expected: -2016
+
+passed: Test BigInteger.Max(BigInteger(-2016), BigInteger(9223372036854775807)). Expected: 9223372036854775807
+passed: Test BigInteger.Max(BigInteger(-2016), 9223372036854775807). Expected: 9223372036854775807
+passed: Test BigInteger.Max(-2016, BigInteger(9223372036854775807)). Expected: 9223372036854775807
+passed: Test BigInteger.Min(BigInteger(-2016), BigInteger(9223372036854775807)). Expected: -2016
+passed: Test BigInteger.Min(BigInteger(-2016), 9223372036854775807). Expected: -2016
+passed: Test BigInteger.Min(-2016, BigInteger(9223372036854775807)). Expected: -2016
+
+passed: Test BigInteger.Max(BigInteger(-387), BigInteger(-9223372036854775808)). Expected: -387
+passed: Test BigInteger.Max(BigInteger(-387), -9223372036854775808). Expected: -387
+passed: Test BigInteger.Max(-387, BigInteger(-9223372036854775808)). Expected: -387
+passed: Test BigInteger.Min(BigInteger(-387), BigInteger(-9223372036854775808)). Expected: -9223372036854775808
+passed: Test BigInteger.Min(BigInteger(-387), -9223372036854775808). Expected: -9223372036854775808
+passed: Test BigInteger.Min(-387, BigInteger(-9223372036854775808)). Expected: -9223372036854775808
+
+passed: Test BigInteger.Max(BigInteger(-387), BigInteger(-2354)). Expected: -387
+passed: Test BigInteger.Max(BigInteger(-387), -2354). Expected: -387
+passed: Test BigInteger.Max(-387, BigInteger(-2354)). Expected: -387
+passed: Test BigInteger.Min(BigInteger(-387), BigInteger(-2354)). Expected: -2354
+passed: Test BigInteger.Min(BigInteger(-387), -2354). Expected: -2354
+passed: Test BigInteger.Min(-387, BigInteger(-2354)). Expected: -2354
+
+passed: Test BigInteger.Max(BigInteger(-387), BigInteger(-2016)). Expected: -387
+passed: Test BigInteger.Max(BigInteger(-387), -2016). Expected: -387
+passed: Test BigInteger.Max(-387, BigInteger(-2016)). Expected: -387
+passed: Test BigInteger.Min(BigInteger(-387), BigInteger(-2016)). Expected: -2016
+passed: Test BigInteger.Min(BigInteger(-387), -2016). Expected: -2016
+passed: Test BigInteger.Min(-387, BigInteger(-2016)). Expected: -2016
+
+passed: Test BigInteger.Max(BigInteger(-387), BigInteger(-387)). Expected: -387
+passed: Test BigInteger.Max(BigInteger(-387), -387). Expected: -387
+passed: Test BigInteger.Max(-387, BigInteger(-387)). Expected: -387
+passed: Test BigInteger.Min(BigInteger(-387), BigInteger(-387)). Expected: -387
+passed: Test BigInteger.Min(BigInteger(-387), -387). Expected: -387
+passed: Test BigInteger.Min(-387, BigInteger(-387)). Expected: -387
+
+passed: Test BigInteger.Max(BigInteger(-387), BigInteger(0)). Expected: 0
+passed: Test BigInteger.Max(BigInteger(-387), 0). Expected: 0
+passed: Test BigInteger.Max(-387, BigInteger(0)). Expected: 0
+passed: Test BigInteger.Min(BigInteger(-387), BigInteger(0)). Expected: -387
+passed: Test BigInteger.Min(BigInteger(-387), 0). Expected: -387
+passed: Test BigInteger.Min(-387, BigInteger(0)). Expected: -387
+
+passed: Test BigInteger.Max(BigInteger(-387), BigInteger(293)). Expected: 293
+passed: Test BigInteger.Max(BigInteger(-387), 293). Expected: 293
+passed: Test BigInteger.Max(-387, BigInteger(293)). Expected: 293
+passed: Test BigInteger.Min(BigInteger(-387), BigInteger(293)). Expected: -387
+passed: Test BigInteger.Min(BigInteger(-387), 293). Expected: -387
+passed: Test BigInteger.Min(-387, BigInteger(293)). Expected: -387
+
+passed: Test BigInteger.Max(BigInteger(-387), BigInteger(387)). Expected: 387
+passed: Test BigInteger.Max(BigInteger(-387), 387). Expected: 387
+passed: Test BigInteger.Max(-387, BigInteger(387)). Expected: 387
+passed: Test BigInteger.Min(BigInteger(-387), BigInteger(387)). Expected: -387
+passed: Test BigInteger.Min(BigInteger(-387), 387). Expected: -387
+passed: Test BigInteger.Min(-387, BigInteger(387)). Expected: -387
+
+passed: Test BigInteger.Max(BigInteger(-387), BigInteger(2016)). Expected: 2016
+passed: Test BigInteger.Max(BigInteger(-387), 2016). Expected: 2016
+passed: Test BigInteger.Max(-387, BigInteger(2016)). Expected: 2016
+passed: Test BigInteger.Min(BigInteger(-387), BigInteger(2016)). Expected: -387
+passed: Test BigInteger.Min(BigInteger(-387), 2016). Expected: -387
+passed: Test BigInteger.Min(-387, BigInteger(2016)). Expected: -387
+
+passed: Test BigInteger.Max(BigInteger(-387), BigInteger(9223372036854775807)). Expected: 9223372036854775807
+passed: Test BigInteger.Max(BigInteger(-387), 9223372036854775807). Expected: 9223372036854775807
+passed: Test BigInteger.Max(-387, BigInteger(9223372036854775807)). Expected: 9223372036854775807
+passed: Test BigInteger.Min(BigInteger(-387), BigInteger(9223372036854775807)). Expected: -387
+passed: Test BigInteger.Min(BigInteger(-387), 9223372036854775807). Expected: -387
+passed: Test BigInteger.Min(-387, BigInteger(9223372036854775807)). Expected: -387
+
+passed: Test BigInteger.Max(BigInteger(0), BigInteger(-9223372036854775808)). Expected: 0
+passed: Test BigInteger.Max(BigInteger(0), -9223372036854775808). Expected: 0
+passed: Test BigInteger.Max(0, BigInteger(-9223372036854775808)). Expected: 0
+passed: Test BigInteger.Min(BigInteger(0), BigInteger(-9223372036854775808)). Expected: -9223372036854775808
+passed: Test BigInteger.Min(BigInteger(0), -9223372036854775808). Expected: -9223372036854775808
+passed: Test BigInteger.Min(0, BigInteger(-9223372036854775808)). Expected: -9223372036854775808
+
+passed: Test BigInteger.Max(BigInteger(0), BigInteger(-2354)). Expected: 0
+passed: Test BigInteger.Max(BigInteger(0), -2354). Expected: 0
+passed: Test BigInteger.Max(0, BigInteger(-2354)). Expected: 0
+passed: Test BigInteger.Min(BigInteger(0), BigInteger(-2354)). Expected: -2354
+passed: Test BigInteger.Min(BigInteger(0), -2354). Expected: -2354
+passed: Test BigInteger.Min(0, BigInteger(-2354)). Expected: -2354
+
+passed: Test BigInteger.Max(BigInteger(0), BigInteger(-2016)). Expected: 0
+passed: Test BigInteger.Max(BigInteger(0), -2016). Expected: 0
+passed: Test BigInteger.Max(0, BigInteger(-2016)). Expected: 0
+passed: Test BigInteger.Min(BigInteger(0), BigInteger(-2016)). Expected: -2016
+passed: Test BigInteger.Min(BigInteger(0), -2016). Expected: -2016
+passed: Test BigInteger.Min(0, BigInteger(-2016)). Expected: -2016
+
+passed: Test BigInteger.Max(BigInteger(0), BigInteger(-387)). Expected: 0
+passed: Test BigInteger.Max(BigInteger(0), -387). Expected: 0
+passed: Test BigInteger.Max(0, BigInteger(-387)). Expected: 0
+passed: Test BigInteger.Min(BigInteger(0), BigInteger(-387)). Expected: -387
+passed: Test BigInteger.Min(BigInteger(0), -387). Expected: -387
+passed: Test BigInteger.Min(0, BigInteger(-387)). Expected: -387
+
+passed: Test BigInteger.Max(BigInteger(0), BigInteger(0)). Expected: 0
+passed: Test BigInteger.Max(BigInteger(0), 0). Expected: 0
+passed: Test BigInteger.Max(0, BigInteger(0)). Expected: 0
+passed: Test BigInteger.Min(BigInteger(0), BigInteger(0)). Expected: 0
+passed: Test BigInteger.Min(BigInteger(0), 0). Expected: 0
+passed: Test BigInteger.Min(0, BigInteger(0)). Expected: 0
+
+passed: Test BigInteger.Max(BigInteger(0), BigInteger(293)). Expected: 293
+passed: Test BigInteger.Max(BigInteger(0), 293). Expected: 293
+passed: Test BigInteger.Max(0, BigInteger(293)). Expected: 293
+passed: Test BigInteger.Min(BigInteger(0), BigInteger(293)). Expected: 0
+passed: Test BigInteger.Min(BigInteger(0), 293). Expected: 0
+passed: Test BigInteger.Min(0, BigInteger(293)). Expected: 0
+
+passed: Test BigInteger.Max(BigInteger(0), BigInteger(387)). Expected: 387
+passed: Test BigInteger.Max(BigInteger(0), 387). Expected: 387
+passed: Test BigInteger.Max(0, BigInteger(387)). Expected: 387
+passed: Test BigInteger.Min(BigInteger(0), BigInteger(387)). Expected: 0
+passed: Test BigInteger.Min(BigInteger(0), 387). Expected: 0
+passed: Test BigInteger.Min(0, BigInteger(387)). Expected: 0
+
+passed: Test BigInteger.Max(BigInteger(0), BigInteger(2016)). Expected: 2016
+passed: Test BigInteger.Max(BigInteger(0), 2016). Expected: 2016
+passed: Test BigInteger.Max(0, BigInteger(2016)). Expected: 2016
+passed: Test BigInteger.Min(BigInteger(0), BigInteger(2016)). Expected: 0
+passed: Test BigInteger.Min(BigInteger(0), 2016). Expected: 0
+passed: Test BigInteger.Min(0, BigInteger(2016)). Expected: 0
+
+passed: Test BigInteger.Max(BigInteger(0), BigInteger(9223372036854775807)). Expected: 9223372036854775807
+passed: Test BigInteger.Max(BigInteger(0), 9223372036854775807). Expected: 9223372036854775807
+passed: Test BigInteger.Max(0, BigInteger(9223372036854775807)). Expected: 9223372036854775807
+passed: Test BigInteger.Min(BigInteger(0), BigInteger(9223372036854775807)). Expected: 0
+passed: Test BigInteger.Min(BigInteger(0), 9223372036854775807). Expected: 0
+passed: Test BigInteger.Min(0, BigInteger(9223372036854775807)). Expected: 0
+
+passed: Test BigInteger.Max(BigInteger(23), BigInteger(-9223372036854775808)). Expected: 23
+passed: Test BigInteger.Max(BigInteger(23), -9223372036854775808). Expected: 23
+passed: Test BigInteger.Max(23, BigInteger(-9223372036854775808)). Expected: 23
+passed: Test BigInteger.Min(BigInteger(23), BigInteger(-9223372036854775808)). Expected: -9223372036854775808
+passed: Test BigInteger.Min(BigInteger(23), -9223372036854775808). Expected: -9223372036854775808
+passed: Test BigInteger.Min(23, BigInteger(-9223372036854775808)). Expected: -9223372036854775808
+
+passed: Test BigInteger.Max(BigInteger(23), BigInteger(-2354)). Expected: 23
+passed: Test BigInteger.Max(BigInteger(23), -2354). Expected: 23
+passed: Test BigInteger.Max(23, BigInteger(-2354)). Expected: 23
+passed: Test BigInteger.Min(BigInteger(23), BigInteger(-2354)). Expected: -2354
+passed: Test BigInteger.Min(BigInteger(23), -2354). Expected: -2354
+passed: Test BigInteger.Min(23, BigInteger(-2354)). Expected: -2354
+
+passed: Test BigInteger.Max(BigInteger(23), BigInteger(-2016)). Expected: 23
+passed: Test BigInteger.Max(BigInteger(23), -2016). Expected: 23
+passed: Test BigInteger.Max(23, BigInteger(-2016)). Expected: 23
+passed: Test BigInteger.Min(BigInteger(23), BigInteger(-2016)). Expected: -2016
+passed: Test BigInteger.Min(BigInteger(23), -2016). Expected: -2016
+passed: Test BigInteger.Min(23, BigInteger(-2016)). Expected: -2016
+
+passed: Test BigInteger.Max(BigInteger(23), BigInteger(-387)). Expected: 23
+passed: Test BigInteger.Max(BigInteger(23), -387). Expected: 23
+passed: Test BigInteger.Max(23, BigInteger(-387)). Expected: 23
+passed: Test BigInteger.Min(BigInteger(23), BigInteger(-387)). Expected: -387
+passed: Test BigInteger.Min(BigInteger(23), -387). Expected: -387
+passed: Test BigInteger.Min(23, BigInteger(-387)). Expected: -387
+
+passed: Test BigInteger.Max(BigInteger(23), BigInteger(0)). Expected: 23
+passed: Test BigInteger.Max(BigInteger(23), 0). Expected: 23
+passed: Test BigInteger.Max(23, BigInteger(0)). Expected: 23
+passed: Test BigInteger.Min(BigInteger(23), BigInteger(0)). Expected: 0
+passed: Test BigInteger.Min(BigInteger(23), 0). Expected: 0
+passed: Test BigInteger.Min(23, BigInteger(0)). Expected: 0
+
+passed: Test BigInteger.Max(BigInteger(23), BigInteger(293)). Expected: 293
+passed: Test BigInteger.Max(BigInteger(23), 293). Expected: 293
+passed: Test BigInteger.Max(23, BigInteger(293)). Expected: 293
+passed: Test BigInteger.Min(BigInteger(23), BigInteger(293)). Expected: 23
+passed: Test BigInteger.Min(BigInteger(23), 293). Expected: 23
+passed: Test BigInteger.Min(23, BigInteger(293)). Expected: 23
+
+passed: Test BigInteger.Max(BigInteger(23), BigInteger(387)). Expected: 387
+passed: Test BigInteger.Max(BigInteger(23), 387). Expected: 387
+passed: Test BigInteger.Max(23, BigInteger(387)). Expected: 387
+passed: Test BigInteger.Min(BigInteger(23), BigInteger(387)). Expected: 23
+passed: Test BigInteger.Min(BigInteger(23), 387). Expected: 23
+passed: Test BigInteger.Min(23, BigInteger(387)). Expected: 23
+
+passed: Test BigInteger.Max(BigInteger(23), BigInteger(2016)). Expected: 2016
+passed: Test BigInteger.Max(BigInteger(23), 2016). Expected: 2016
+passed: Test BigInteger.Max(23, BigInteger(2016)). Expected: 2016
+passed: Test BigInteger.Min(BigInteger(23), BigInteger(2016)). Expected: 23
+passed: Test BigInteger.Min(BigInteger(23), 2016). Expected: 23
+passed: Test BigInteger.Min(23, BigInteger(2016)). Expected: 23
+
+passed: Test BigInteger.Max(BigInteger(23), BigInteger(9223372036854775807)). Expected: 9223372036854775807
+passed: Test BigInteger.Max(BigInteger(23), 9223372036854775807). Expected: 9223372036854775807
+passed: Test BigInteger.Max(23, BigInteger(9223372036854775807)). Expected: 9223372036854775807
+passed: Test BigInteger.Min(BigInteger(23), BigInteger(9223372036854775807)). Expected: 23
+passed: Test BigInteger.Min(BigInteger(23), 9223372036854775807). Expected: 23
+passed: Test BigInteger.Min(23, BigInteger(9223372036854775807)). Expected: 23
+
+passed: Test BigInteger.Max(BigInteger(387), BigInteger(-9223372036854775808)). Expected: 387
+passed: Test BigInteger.Max(BigInteger(387), -9223372036854775808). Expected: 387
+passed: Test BigInteger.Max(387, BigInteger(-9223372036854775808)). Expected: 387
+passed: Test BigInteger.Min(BigInteger(387), BigInteger(-9223372036854775808)). Expected: -9223372036854775808
+passed: Test BigInteger.Min(BigInteger(387), -9223372036854775808). Expected: -9223372036854775808
+passed: Test BigInteger.Min(387, BigInteger(-9223372036854775808)). Expected: -9223372036854775808
+
+passed: Test BigInteger.Max(BigInteger(387), BigInteger(-2354)). Expected: 387
+passed: Test BigInteger.Max(BigInteger(387), -2354). Expected: 387
+passed: Test BigInteger.Max(387, BigInteger(-2354)). Expected: 387
+passed: Test BigInteger.Min(BigInteger(387), BigInteger(-2354)). Expected: -2354
+passed: Test BigInteger.Min(BigInteger(387), -2354). Expected: -2354
+passed: Test BigInteger.Min(387, BigInteger(-2354)). Expected: -2354
+
+passed: Test BigInteger.Max(BigInteger(387), BigInteger(-2016)). Expected: 387
+passed: Test BigInteger.Max(BigInteger(387), -2016). Expected: 387
+passed: Test BigInteger.Max(387, BigInteger(-2016)). Expected: 387
+passed: Test BigInteger.Min(BigInteger(387), BigInteger(-2016)). Expected: -2016
+passed: Test BigInteger.Min(BigInteger(387), -2016). Expected: -2016
+passed: Test BigInteger.Min(387, BigInteger(-2016)). Expected: -2016
+
+passed: Test BigInteger.Max(BigInteger(387), BigInteger(-387)). Expected: 387
+passed: Test BigInteger.Max(BigInteger(387), -387). Expected: 387
+passed: Test BigInteger.Max(387, BigInteger(-387)). Expected: 387
+passed: Test BigInteger.Min(BigInteger(387), BigInteger(-387)). Expected: -387
+passed: Test BigInteger.Min(BigInteger(387), -387). Expected: -387
+passed: Test BigInteger.Min(387, BigInteger(-387)). Expected: -387
+
+passed: Test BigInteger.Max(BigInteger(387), BigInteger(0)). Expected: 387
+passed: Test BigInteger.Max(BigInteger(387), 0). Expected: 387
+passed: Test BigInteger.Max(387, BigInteger(0)). Expected: 387
+passed: Test BigInteger.Min(BigInteger(387), BigInteger(0)). Expected: 0
+passed: Test BigInteger.Min(BigInteger(387), 0). Expected: 0
+passed: Test BigInteger.Min(387, BigInteger(0)). Expected: 0
+
+passed: Test BigInteger.Max(BigInteger(387), BigInteger(293)). Expected: 387
+passed: Test BigInteger.Max(BigInteger(387), 293). Expected: 387
+passed: Test BigInteger.Max(387, BigInteger(293)). Expected: 387
+passed: Test BigInteger.Min(BigInteger(387), BigInteger(293)). Expected: 293
+passed: Test BigInteger.Min(BigInteger(387), 293). Expected: 293
+passed: Test BigInteger.Min(387, BigInteger(293)). Expected: 293
+
+passed: Test BigInteger.Max(BigInteger(387), BigInteger(387)). Expected: 387
+passed: Test BigInteger.Max(BigInteger(387), 387). Expected: 387
+passed: Test BigInteger.Max(387, BigInteger(387)). Expected: 387
+passed: Test BigInteger.Min(BigInteger(387), BigInteger(387)). Expected: 387
+passed: Test BigInteger.Min(BigInteger(387), 387). Expected: 387
+passed: Test BigInteger.Min(387, BigInteger(387)). Expected: 387
+
+passed: Test BigInteger.Max(BigInteger(387), BigInteger(2016)). Expected: 2016
+passed: Test BigInteger.Max(BigInteger(387), 2016). Expected: 2016
+passed: Test BigInteger.Max(387, BigInteger(2016)). Expected: 2016
+passed: Test BigInteger.Min(BigInteger(387), BigInteger(2016)). Expected: 387
+passed: Test BigInteger.Min(BigInteger(387), 2016). Expected: 387
+passed: Test BigInteger.Min(387, BigInteger(2016)). Expected: 387
+
+passed: Test BigInteger.Max(BigInteger(387), BigInteger(9223372036854775807)). Expected: 9223372036854775807
+passed: Test BigInteger.Max(BigInteger(387), 9223372036854775807). Expected: 9223372036854775807
+passed: Test BigInteger.Max(387, BigInteger(9223372036854775807)). Expected: 9223372036854775807
+passed: Test BigInteger.Min(BigInteger(387), BigInteger(9223372036854775807)). Expected: 387
+passed: Test BigInteger.Min(BigInteger(387), 9223372036854775807). Expected: 387
+passed: Test BigInteger.Min(387, BigInteger(9223372036854775807)). Expected: 387
+
+passed: Test BigInteger.Max(BigInteger(9223372036854775807), BigInteger(-9223372036854775808)). Expected: 9223372036854775807
+passed: Test BigInteger.Max(BigInteger(9223372036854775807), -9223372036854775808). Expected: 9223372036854775807
+passed: Test BigInteger.Max(9223372036854775807, BigInteger(-9223372036854775808)). Expected: 9223372036854775807
+passed: Test BigInteger.Min(BigInteger(9223372036854775807), BigInteger(-9223372036854775808)). Expected: -9223372036854775808
+passed: Test BigInteger.Min(BigInteger(9223372036854775807), -9223372036854775808). Expected: -9223372036854775808
+passed: Test BigInteger.Min(9223372036854775807, BigInteger(-9223372036854775808)). Expected: -9223372036854775808
+
+passed: Test BigInteger.Max(BigInteger(9223372036854775807), BigInteger(-2354)). Expected: 9223372036854775807
+passed: Test BigInteger.Max(BigInteger(9223372036854775807), -2354). Expected: 9223372036854775807
+passed: Test BigInteger.Max(9223372036854775807, BigInteger(-2354)). Expected: 9223372036854775807
+passed: Test BigInteger.Min(BigInteger(9223372036854775807), BigInteger(-2354)). Expected: -2354
+passed: Test BigInteger.Min(BigInteger(9223372036854775807), -2354). Expected: -2354
+passed: Test BigInteger.Min(9223372036854775807, BigInteger(-2354)). Expected: -2354
+
+passed: Test BigInteger.Max(BigInteger(9223372036854775807), BigInteger(-2016)). Expected: 9223372036854775807
+passed: Test BigInteger.Max(BigInteger(9223372036854775807), -2016). Expected: 9223372036854775807
+passed: Test BigInteger.Max(9223372036854775807, BigInteger(-2016)). Expected: 9223372036854775807
+passed: Test BigInteger.Min(BigInteger(9223372036854775807), BigInteger(-2016)). Expected: -2016
+passed: Test BigInteger.Min(BigInteger(9223372036854775807), -2016). Expected: -2016
+passed: Test BigInteger.Min(9223372036854775807, BigInteger(-2016)). Expected: -2016
+
+passed: Test BigInteger.Max(BigInteger(9223372036854775807), BigInteger(-387)). Expected: 9223372036854775807
+passed: Test BigInteger.Max(BigInteger(9223372036854775807), -387). Expected: 9223372036854775807
+passed: Test BigInteger.Max(9223372036854775807, BigInteger(-387)). Expected: 9223372036854775807
+passed: Test BigInteger.Min(BigInteger(9223372036854775807), BigInteger(-387)). Expected: -387
+passed: Test BigInteger.Min(BigInteger(9223372036854775807), -387). Expected: -387
+passed: Test BigInteger.Min(9223372036854775807, BigInteger(-387)). Expected: -387
+
+passed: Test BigInteger.Max(BigInteger(9223372036854775807), BigInteger(0)). Expected: 9223372036854775807
+passed: Test BigInteger.Max(BigInteger(9223372036854775807), 0). Expected: 9223372036854775807
+passed: Test BigInteger.Max(9223372036854775807, BigInteger(0)). Expected: 9223372036854775807
+passed: Test BigInteger.Min(BigInteger(9223372036854775807), BigInteger(0)). Expected: 0
+passed: Test BigInteger.Min(BigInteger(9223372036854775807), 0). Expected: 0
+passed: Test BigInteger.Min(9223372036854775807, BigInteger(0)). Expected: 0
+
+passed: Test BigInteger.Max(BigInteger(9223372036854775807), BigInteger(293)). Expected: 9223372036854775807
+passed: Test BigInteger.Max(BigInteger(9223372036854775807), 293). Expected: 9223372036854775807
+passed: Test BigInteger.Max(9223372036854775807, BigInteger(293)). Expected: 9223372036854775807
+passed: Test BigInteger.Min(BigInteger(9223372036854775807), BigInteger(293)). Expected: 293
+passed: Test BigInteger.Min(BigInteger(9223372036854775807), 293). Expected: 293
+passed: Test BigInteger.Min(9223372036854775807, BigInteger(293)). Expected: 293
+
+passed: Test BigInteger.Max(BigInteger(9223372036854775807), BigInteger(387)). Expected: 9223372036854775807
+passed: Test BigInteger.Max(BigInteger(9223372036854775807), 387). Expected: 9223372036854775807
+passed: Test BigInteger.Max(9223372036854775807, BigInteger(387)). Expected: 9223372036854775807
+passed: Test BigInteger.Min(BigInteger(9223372036854775807), BigInteger(387)). Expected: 387
+passed: Test BigInteger.Min(BigInteger(9223372036854775807), 387). Expected: 387
+passed: Test BigInteger.Min(9223372036854775807, BigInteger(387)). Expected: 387
+
+passed: Test BigInteger.Max(BigInteger(9223372036854775807), BigInteger(2016)). Expected: 9223372036854775807
+passed: Test BigInteger.Max(BigInteger(9223372036854775807), 2016). Expected: 9223372036854775807
+passed: Test BigInteger.Max(9223372036854775807, BigInteger(2016)). Expected: 9223372036854775807
+passed: Test BigInteger.Min(BigInteger(9223372036854775807), BigInteger(2016)). Expected: 2016
+passed: Test BigInteger.Min(BigInteger(9223372036854775807), 2016). Expected: 2016
+passed: Test BigInteger.Min(9223372036854775807, BigInteger(2016)). Expected: 2016
+
+passed: Test BigInteger.Max(BigInteger(9223372036854775807), BigInteger(9223372036854775807)). Expected: 9223372036854775807
+passed: Test BigInteger.Max(BigInteger(9223372036854775807), 9223372036854775807). Expected: 9223372036854775807
+passed: Test BigInteger.Max(9223372036854775807, BigInteger(9223372036854775807)). Expected: 9223372036854775807
+passed: Test BigInteger.Min(BigInteger(9223372036854775807), BigInteger(9223372036854775807)). Expected: 9223372036854775807
+passed: Test BigInteger.Min(BigInteger(9223372036854775807), 9223372036854775807). Expected: 9223372036854775807
+passed: Test BigInteger.Min(9223372036854775807, BigInteger(9223372036854775807)). Expected: 9223372036854775807
+
+Complete
