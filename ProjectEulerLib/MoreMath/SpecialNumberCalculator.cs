@@ -23,16 +23,15 @@ namespace ProjectEulerLib.MoreMath
             // ignore negative numbers
             double n = (Math.Sqrt(x * 8 + 1) - 1) / 2;
 
-            return (Math.Abs(value: n - (long) n) < Math.Pow(0.1, 8));
+            return (Math.Abs(value: n - (long)n) < Math.Pow(0.1, 8));
         }
-
 
         public long ReverseTriangleNumber(long x)
         {
             // ignore negative numbers
             double n = (Math.Sqrt(x * 8 + 1) - 1) / 2;
 
-            if (Math.Abs(value: n - (long) n) < Math.Pow(0.1, 8))
+            if (Math.Abs(value: n - (long)n) < Math.Pow(0.1, 8))
             {
                 return (long)n;
             }
@@ -40,11 +39,10 @@ namespace ProjectEulerLib.MoreMath
             return -1;
         }
 
-        public long NthTriangleNumber(long n)
+        public long GetNthTriangleNumber(long n)
         {
             return n * (n + 1) / 2;
         }
-
 
         public long GetNthPentagonNumber(long n)
         {
@@ -64,29 +62,29 @@ namespace ProjectEulerLib.MoreMath
             double x = (1 + Math.Sqrt(1 + 24 * n)) / 6;
             if ((Math.Abs(x - (long)x)) < Math.Pow(0.1, 8))
             {
-                return (long) x;
+                return (long)x;
             }
 
             return -1;
         }
 
-        public long NthHexagonalNumber(long n)
+        public long GetNthHexagonalNumber(long n)
         {
-            return n* (3 * n - 1) / 2;
+            return n * (2 * n - 1);
         }
 
         public bool IsHexagonalNumber(long x)
         {
             double n = (1 + Math.Sqrt(1 + 8 * x)) / 4;
 
-            return (Math.Abs(value: n - (long) n) < Math.Pow(0.1, 8));
+            return (Math.Abs(value: n - (long)n) < Math.Pow(0.1, 8));
         }
 
         public long ReverseHexagonalNumber(long x)
         {
             double n = (1 + Math.Sqrt(1 + 8 * x)) / 4;
 
-            if (Math.Abs(value: n - (long) n) < Math.Pow(0.1, 8))
+            if (Math.Abs(value: n - (long)n) < Math.Pow(0.1, 8))
             {
                 return (long)n;
             }
@@ -94,5 +92,19 @@ namespace ProjectEulerLib.MoreMath
             return -1;
         }
 
+        public long GetNthSquare(long n)
+        {
+            return n * n;
+        }
+
+        public long GetNthHeptagonalNumber(long n)
+        {
+            return n * (5 * n - 3) / 2;
+        }
+
+        public long GetNthOctagonalNumber(long n)
+        {
+            return n * (3 * n - 2);
+        }
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ProjectEulerDataContracts;
+using ProjectEulerLib.MoreMath;
 
 namespace ProjectEulerLib
 {
@@ -28,12 +29,12 @@ Find the sum of the digits in the number 100!";
                 Description = "Use List<long> to store bigNumber, carryDigits when an item is bigger than long.MaxValue / 100",
                 Version = 1,
             });
-            // Problem.Solutions.Add(new Solution
-            // {
-            //     ProblemId = 0,
-            //     Description = "Flatten the grid, build rowLists, columnLists, ForwardDiagonalLists, backDiagonalLists. Then loop to find the max product of 4.",
-            //     Version = 2,
-            // });
+            Problem.Solutions.Add(new Solution
+            {
+                ProblemId = 0,
+                Description = "BigInteger custom class",
+                Version = 2,
+            });
         }
 
         long MaxLongOne100th = long.MaxValue / 100;
@@ -88,7 +89,17 @@ Find the sum of the digits in the number 100!";
 
         public override string solution2()
         {
-            return "";
+            BigInteger result = new BigInteger(1);
+            for(int i = 2; i <= 100; i ++)
+            {
+                result = result * i;
+            }
+            string resultString = result.ToString();
+            int sum = 0;
+            for(int i = 0; i < resultString.Length; i++)
+            sum += resultString[i] - '0';
+
+            return sum.ToString();
         }
     }
 }

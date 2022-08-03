@@ -61,7 +61,15 @@ namespace ProjectEulerLib
 
             long p = 0;
             long maxP = 0;
-            for (int i = 2; i < Math.Sqrt(n); i++)
+
+            while(n % 2 == 0)
+            {
+                maxP = 2;
+                n/=2;
+            }
+            
+            int i = 3;
+            for (; i < Math.Sqrt(n); i+=2)
             {
                 while (n % i == 0)
                 {
@@ -71,6 +79,8 @@ namespace ProjectEulerLib
                     maxP = Math.Max(maxP, p);
                 }
             }
+
+            Console.WriteLine(i);
 
             return Math.Max(maxP, n).ToString();
         }

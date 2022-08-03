@@ -118,6 +118,17 @@ namespace ProjectEulerLib.MoreMath
             return bArray;
         }
 
+        public bool IsPrime(long n)
+        {
+            if (n < 2) return false;
+            if (n % 2 == 0) return false;
+            for(int i = 3; i <= Math.Sqrt(n); i +=2)
+            {
+                if (n % i == 0) return false;
+            }
+
+            return true;
+        }
     }
 }
 

@@ -29,7 +29,7 @@ How many different ways can £2 be made using any number of coins?";
                 ProblemId = 31,
                 Description = 
 @"Recursive. 
-You could translate recursive to loops (the 'count down' solution), but then you have to change the code when the upperBound changes (total of 200 P).
+You could translate recursive to loops (the 'count down' solution), but then you have to change the code when the types of coins change.
 Fot this problem, the recursive is 6 levels deep at the most.",
                 Version = 1,
             });

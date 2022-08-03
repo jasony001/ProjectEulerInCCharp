@@ -17,6 +17,14 @@ namespace ProjectEulerLib.MoreMath
         List<long> _digits;
 
         public bool AutoCarrying { get; set; }
+
+        public long DigitCount
+        {
+            get
+            {
+                return _digits.Count;
+            }
+        }
         #endregion
 
         #region constructors - long, string, BigInteger (clone)

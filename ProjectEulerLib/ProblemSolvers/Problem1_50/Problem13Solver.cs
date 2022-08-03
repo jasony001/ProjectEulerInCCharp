@@ -163,20 +163,11 @@ namespace ProjectEulerLib
 
         public override string solution2()
         {
-            // BigInteger b1 = new BigInteger(67);
-            // BigInteger b2 = new BigInteger(76);
-            // BigInteger a = b1 + b2;  
+            BigInteger sum = new BigInteger(0);
+            foreach(string line in BigIntegerList)
+                sum = sum + new BigInteger(line);
 
-            // BigInteger sum = new BigInteger(0);
-
-            // for(int i = 0; i < 100; i ++)
-            // {
-            //     BigInteger b = new BigInteger(BigIntegerList[i]);
-            //     sum = sum + b;
-            // }
-
-            // return sum.ToString().Substring(0, 10);
-            return "";
+            return sum.ToString().Substring(0, 10);
         }
     }
 }

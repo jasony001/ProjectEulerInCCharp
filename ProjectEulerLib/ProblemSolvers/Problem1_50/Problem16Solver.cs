@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ProjectEulerDataContracts;
+using ProjectEulerLib.MoreMath;
 
 namespace ProjectEulerLib
 {
@@ -21,7 +22,7 @@ namespace ProjectEulerLib
             Problem.Solutions.Add(new Solution
             {
                 ProblemId = 16,
-                Description = "put number in a list, each item is 1 digit. use junior school math multiplication carry digit.",
+                Description = "custom class MoreMath.BigInteger",
                 Version = 1,
             });
             Problem.Solutions.Add(new Solution
@@ -40,16 +41,12 @@ namespace ProjectEulerLib
 
         public override string solution1()
         {
-            List<long> number = new List<long> { 1 };
-            for (int i = 0; i < Problem.UpperBound; i++)
+            BigInteger prod = new BigInteger(2) ^ 1000;
+            string prodString = prod.ToString();
+            int sum = 0;
+            for (int i = 0; i < prodString.Length; i++)
             {
-                number = Multiply(number, 2);
-            }
-
-            long sum = 0;
-            for (int i = 0; i < number.Count(); i++)
-            {
-                sum += number[i];
+                sum += prodString[i] - '0';
             }
 
             return sum.ToString();
