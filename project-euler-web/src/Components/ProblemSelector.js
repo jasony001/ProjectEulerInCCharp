@@ -65,7 +65,7 @@ const ProblemSelector = () => {
         className={styles.form}
         autoComplete="off"
       >
-        <label style={{ "margin-right": "20px" }}>Problem Id:</label>
+        <label style={{ "marginRight": "20px" }}>Problem Id:</label>
         <input
           id="problemId"
           value={problemId}
@@ -75,7 +75,7 @@ const ProblemSelector = () => {
             setShowProblemIdList(true);
             e.stopPropagation();
           }}
-          style={{ "margin-right": "20px" }}
+          style={{ "marginRight": "20px" }}
         ></input>
         <button>Show Solutions</button>
         {apiErrors && <div className={styles.error}>{apiErrors}</div>}

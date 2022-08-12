@@ -12,14 +12,8 @@ namespace ProjectEulerWebAPI.Controllers
     [ApiController]
     public class ProblemControllers : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private readonly ILogger<ProblemControllers> _logger;
         private readonly ProblemSolverFactory _problemSolverFactory;
-
 
         public ProblemControllers(ILogger<ProblemControllers> logger, ProblemSolverFactory problemSolverFactory)
         {
